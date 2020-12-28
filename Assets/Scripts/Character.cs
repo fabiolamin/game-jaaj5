@@ -15,11 +15,17 @@ public class Character : MonoBehaviour
     protected virtual void Hit(int damage)
     {
         actualLive -= damage;
+
+        if (actualLive <= 0) 
+        {
+            actualLive = 0;           
+            Die();
+        }
     }
 
     protected virtual void Die()
     {
-        //
+        alive = false;
     }
 
 }
