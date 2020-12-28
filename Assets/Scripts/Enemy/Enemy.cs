@@ -15,9 +15,9 @@ public class Enemy : Character
        
     }
     // Private Functions
-    protected virtual void Die() 
+    protected override void Die()
     {
-        alive = false;
+       
     }
 
     protected virtual void Attack(/*playerController player*/) // need a player to attack
