@@ -27,7 +27,6 @@ public class MummyController : Enemy
             }
 
            
-
         }
         
 
