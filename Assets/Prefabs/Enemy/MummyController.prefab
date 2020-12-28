@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alive: 1
   lives: 1
-  actualLives: 0
+  actualLive: 0
   movimentSpeed: 200
   powerAttack: 1
   isMoving: 1
@@ -56,7 +56,7 @@ MonoBehaviour:
   maxPos: {fileID: 4211861530436956529}
   rb: {fileID: 4211861531611157682}
   mummyTransform: {fileID: 4211861531611157644}
-  reviveCooldown: 5
+  reviveCooldown: 3
 --- !u!1 &4211861530102969371
 GameObject:
   m_ObjectHideFlags: 0
