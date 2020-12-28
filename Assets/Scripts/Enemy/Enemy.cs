@@ -2,23 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : Character
 {
     // Private variables
 
-    //public LootGenerator LootGen;
-    [SerializeField] protected int lives;
+    //public LootGenerator LootGen;  
     [SerializeField] protected float movimentSpeed;
     [SerializeField] protected int powerAttack;
 
-    // Private Functions
-    void Die() 
+    private void Start()
     {
-    
+       
+    }
+    // Private Functions
+    protected virtual void Die() 
+    {
+        alive = false;
     }
 
-    void Attack(/*playerController player*/) // need a player to attack
+    protected virtual void Attack(/*playerController player*/) // need a player to attack
     {
-    
+     // player.hit(hit);
     }
 }

@@ -326,6 +326,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MummyController
       objectReference: {fileID: 0}
+    - target: {fileID: 4211861529975733349, guid: 0a3612c4ebd8a644a9af8a94ddf394f1, type: 3}
+      propertyPath: alive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4211861529975733350, guid: 0a3612c4ebd8a644a9af8a94ddf394f1, type: 3}
       propertyPath: m_RootOrder
       value: 2

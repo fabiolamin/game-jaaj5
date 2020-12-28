@@ -46,7 +46,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 083b7d0698ac7e84b8c8da6c2f257f80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alive: 1
   lives: 1
+  actualLives: 0
   movimentSpeed: 200
   powerAttack: 1
   isMoving: 1
@@ -54,6 +56,7 @@ MonoBehaviour:
   maxPos: {fileID: 4211861530436956529}
   rb: {fileID: 4211861531611157682}
   mummyTransform: {fileID: 4211861531611157644}
+  reviveCooldown: 5
 --- !u!1 &4211861530102969371
 GameObject:
   m_ObjectHideFlags: 0
@@ -310,7 +313,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 7.55
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
