@@ -16,8 +16,8 @@ public class Enemy : Character
     }
     // Private Functions
 
-    protected virtual void Attack(/*playerController player*/) // need a player to attack
+    protected virtual void Attack(Character character) // need a player to attack
     {
-     // player.hit(hit);
+       // character.Hit(1);
     }
 }
