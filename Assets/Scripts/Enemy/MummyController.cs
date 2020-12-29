@@ -33,15 +33,6 @@ public class MummyController : Enemy
     }
 
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.K)) // temp
-        {
-            Hit(1);
-        }
-    }
-
-    
 
     // Private Functios
     void Move(int direction) // -1 to move left and 1 to move right
@@ -80,7 +71,6 @@ public class MummyController : Enemy
     }
     protected override void Hit(int damage)
     {      
-        print("levou dano");
         base.Hit(damage);
     }
     IEnumerator Revive()

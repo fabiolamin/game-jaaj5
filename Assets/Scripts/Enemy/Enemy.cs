@@ -12,13 +12,9 @@ public class Enemy : Character
 
     private void Start()
     {
-       
+        actualLive = lives;
     }
     // Private Functions
-    protected override void Die()
-    {
-       
-    }
 
     protected virtual void Attack(/*playerController player*/) // need a player to attack
     {
