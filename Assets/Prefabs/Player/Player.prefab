@@ -152,6 +152,7 @@ GameObject:
   - component: {fileID: 2376650556538145260}
   - component: {fileID: 2376650556538145263}
   - component: {fileID: 1917621267}
+  - component: {fileID: 1352060304}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -289,3 +290,18 @@ MonoBehaviour:
   movementSpeed: 10
   jumpVelocity: 20
   maxHeight: 5
+--- !u!114 &1352060304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2376650556538145256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cdabe6f18315b74f9f1977d16b6b523, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 5
+  decrementSpeed: 0.5
+  playerTimerUI: {fileID: 0}
