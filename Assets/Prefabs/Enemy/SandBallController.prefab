@@ -161,7 +161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alive: 1
-  lives: 1
+  lives: 2
   actualLive: 0
   movimentSpeed: 4
   powerAttack: 1
