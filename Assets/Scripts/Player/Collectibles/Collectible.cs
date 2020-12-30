@@ -4,7 +4,7 @@ using UnityEngine;
 public abstract class Collectible : MonoBehaviour
 {
     protected bool hasBeenCollected = false;
-    [SerializeField] protected float amount;
+    [SerializeField] protected int amount;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
