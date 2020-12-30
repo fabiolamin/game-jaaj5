@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class PlayerTimer : MonoBehaviour
 {
@@ -16,12 +15,12 @@ public class PlayerTimer : MonoBehaviour
 
     private void Update()
     {
-        UpdateTimer();
+        UpdateTimer(-(Time.deltaTime * decrementSpeed));
     }
 
-    private void UpdateTimer()
+    public void UpdateTimer(float amount)
     {
-        currentTimer -= Time.deltaTime * decrementSpeed;
+        currentTimer = Mathf.Clamp(currentTimer + amount, 0, timer);
         playerTimerBar.fillAmount = currentTimer / timer;
         CheckTimer();
     }
@@ -33,10 +32,5 @@ public class PlayerTimer : MonoBehaviour
             PlayerManager.Instance.PlayerHealth.UpdateHealth(-1);
             currentTimer = timer;
         }
-    }
-
-    public void AddTimer(int amount)
-    {
-        currentTimer = Mathf.Clamp(currentTimer + amount, 0, timer);
     }
 }
