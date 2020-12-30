@@ -7,8 +7,7 @@ public class PlayerTimer : MonoBehaviour
     private float currentTimer;
     [SerializeField] private float timer = 5f;
     [SerializeField] private float decrementSpeed = 2f;
-    [SerializeField] private float amountToIncrement = 5f;
-    [SerializeField] private Image playerTimerUI;
+    [SerializeField] private Image playerTimerBar;
 
     private void Awake()
     {
@@ -21,19 +20,10 @@ public class PlayerTimer : MonoBehaviour
         CheckTimer();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(collision.gameObject.CompareTag("Finish"))
-        {
-            FillTimer();
-            Destroy(collision.gameObject);
-        }
-    }
-
     private void UpdateTimer()
     {
         currentTimer -= Time.deltaTime * decrementSpeed;
-        playerTimerUI.fillAmount = currentTimer / timer;
+        playerTimerBar.fillAmount = currentTimer / timer;
     }
 
     private void CheckTimer()
@@ -44,8 +34,8 @@ public class PlayerTimer : MonoBehaviour
         }
     }
 
-    private void FillTimer()
+    public void AddTimer(float amount)
     {
-        currentTimer = Mathf.Clamp(currentTimer + amountToIncrement, 0, timer);
+        currentTimer = Mathf.Clamp(currentTimer + amount, 0, timer);
     }
 }
