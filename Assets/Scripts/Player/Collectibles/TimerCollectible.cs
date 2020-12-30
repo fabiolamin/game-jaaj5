@@ -2,7 +2,7 @@ public class TimerCollectible : Collectible
 {
     protected override void AddToPlayer()
     {
-        PlayerManager.Instance.PlayerTimer.AddTimer(amount);
+        PlayerManager.Instance.PlayerTimer.UpdateTimer(amount);
         gameObject.SetActive(false);
     }
 }
