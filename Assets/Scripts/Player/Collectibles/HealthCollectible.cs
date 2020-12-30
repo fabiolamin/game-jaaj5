@@ -1,8 +1,10 @@
+using System;
+
 public class HealthCollectible : Collectible
 {
     protected override void AddToPlayer()
     {
-        //Add health to player
+        PlayerManager.Instance.PlayerHealth.UpdateHealth(Convert.ToInt32(amount));
         gameObject.SetActive(false);
     }
 }

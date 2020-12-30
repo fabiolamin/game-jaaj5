@@ -17,20 +17,21 @@ public class PlayerTimer : MonoBehaviour
     private void Update()
     {
         UpdateTimer();
-        CheckTimer();
     }
 
     private void UpdateTimer()
     {
         currentTimer -= Time.deltaTime * decrementSpeed;
         playerTimerBar.fillAmount = currentTimer / timer;
+        CheckTimer();
     }
 
     private void CheckTimer()
     {
         if (currentTimer <= 0)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            PlayerManager.Instance.PlayerHealth.UpdateHealth(-1);
+            currentTimer = timer;
         }
     }
 
