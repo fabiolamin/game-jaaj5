@@ -4,7 +4,7 @@ public class TimerCollectible : Collectible
 {
     protected override void AddToPlayer()
     {
-        Debug.Log("Add timer!");
-        Destroy(gameObject);
+        PlayerManager.Instance.PlayerTimer.AddTimer(amount);
+        gameObject.SetActive(false);
     }
 }
