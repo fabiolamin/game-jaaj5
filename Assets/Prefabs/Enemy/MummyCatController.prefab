@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 1908617798831631876}
   m_Layer: 0
   m_Name: MummyCatController
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -102,7 +102,7 @@ GameObject:
   - component: {fileID: 1908617799000912049}
   - component: {fileID: 1908617799000912062}
   m_Layer: 0
-  m_Name: MummyCatController (1)
+  m_Name: MummyCat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
