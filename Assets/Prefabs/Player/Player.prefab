@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2069505800}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.01, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2376650556538145262}
@@ -291,7 +291,7 @@ MonoBehaviour:
   headCollider: {fileID: 3591331510584291075}
   movementSpeed: 10
   jumpVelocity: 20
-  maxJumpingHeight: 10
+  maxJumpingHeight: 5
 --- !u!114 &1352060304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -305,7 +305,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: 5
-  decrementSpeed: 0.5
+  decrementSpeed: 2
   amountToIncrement: 5
   playerTimerUI: {fileID: 0}
 --- !u!1 &5746281430465479232

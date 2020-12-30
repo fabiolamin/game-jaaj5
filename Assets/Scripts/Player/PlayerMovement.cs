@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D playerRb;
     private Vector2 movement = Vector2.zero;
     private float horizontalInput;
-    private int scaleX = 1;
+    private float scaleX = 1f;
     private bool canJump = false;
     private float initialHeight = 0;
 
@@ -23,20 +23,17 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        GetPlayerInput();
+        horizontalInput = Input.GetAxis("Horizontal");
         Rotate();
         Move();
     }
 
-    private void GetPlayerInput()
-    {
-        horizontalInput = Input.GetAxis("Horizontal");
-    }
-
     private void Rotate()
     {
-        if (horizontalInput > 0) { scaleX = 1; }
-        else if (horizontalInput < 0) { scaleX = -1; }
+        if (horizontalInput != 0)
+        {
+            scaleX = Mathf.Sign(horizontalInput);
+        }
 
         transform.localScale = new Vector3(
         scaleX,
@@ -64,7 +61,7 @@ public class PlayerMovement : MonoBehaviour
             ControlJump();
         }
 
-        if(Input.GetKeyUp(KeyCode.Space) && canJump || IsTouchingRoof())
+        if (Input.GetKeyUp(KeyCode.Space) && canJump || IsTouchingRoof())
         {
             canJump = false;
         }
