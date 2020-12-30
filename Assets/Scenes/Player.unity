@@ -1112,14 +1112,6 @@ PrefabInstance:
       propertyPath: playerTimerUI
       value: 
       objectReference: {fileID: 543651429}
-    - target: {fileID: 1352060304, guid: 91bd94c0bf939e64c970096d1b3b1a18, type: 3}
-      propertyPath: decrementSpeed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1352060304, guid: 91bd94c0bf939e64c970096d1b3b1a18, type: 3}
-      propertyPath: amountToIncrement
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 2376650556538145256, guid: 91bd94c0bf939e64c970096d1b3b1a18, type: 3}
       propertyPath: m_Name
       value: Player
