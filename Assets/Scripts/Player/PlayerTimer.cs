@@ -35,7 +35,7 @@ public class PlayerTimer : MonoBehaviour
         }
     }
 
-    public void AddTimer(float amount)
+    public void AddTimer(int amount)
     {
         currentTimer = Mathf.Clamp(currentTimer + amount, 0, timer);
     }
