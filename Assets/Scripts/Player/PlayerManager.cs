@@ -18,6 +18,7 @@ public class PlayerManager : MonoBehaviour
     public PlayerMovement PlayerMovement { get; private set; }
     public PlayerTimer PlayerTimer { get; private set; }
     public PlayerHealth PlayerHealth { get; private set; }
+    public PlayerScore PlayerScore { get; private set; }
 
     private void Awake()
     {
@@ -25,5 +26,6 @@ public class PlayerManager : MonoBehaviour
         PlayerMovement = GetComponent<PlayerMovement>();
         PlayerTimer = GetComponent<PlayerTimer>();
         PlayerHealth = GetComponent<PlayerHealth>();
+        PlayerScore = GetComponent<PlayerScore>();
     }
 }
