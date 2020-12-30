@@ -1109,6 +1109,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1352060304, guid: 91bd94c0bf939e64c970096d1b3b1a18, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1352060304, guid: 91bd94c0bf939e64c970096d1b3b1a18, type: 3}
       propertyPath: playerTimerUI
       value: 
       objectReference: {fileID: 543651429}
@@ -1119,6 +1123,18 @@ PrefabInstance:
     - target: {fileID: 1352060304, guid: 91bd94c0bf939e64c970096d1b3b1a18, type: 3}
       propertyPath: amountToIncrement
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1917621267, guid: 91bd94c0bf939e64c970096d1b3b1a18, type: 3}
+      propertyPath: jumpingTime
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1917621267, guid: 91bd94c0bf939e64c970096d1b3b1a18, type: 3}
+      propertyPath: maxJumpingHeight
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2069505801, guid: 91bd94c0bf939e64c970096d1b3b1a18, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.01
       objectReference: {fileID: 0}
     - target: {fileID: 2376650556538145256, guid: 91bd94c0bf939e64c970096d1b3b1a18, type: 3}
       propertyPath: m_Name
