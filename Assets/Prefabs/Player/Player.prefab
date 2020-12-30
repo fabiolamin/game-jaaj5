@@ -154,6 +154,7 @@ GameObject:
   - component: {fileID: 249286728445368466}
   - component: {fileID: 1917621267}
   - component: {fileID: 1352060304}
+  - component: {fileID: 3586073095043235962}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -320,6 +321,20 @@ MonoBehaviour:
   timer: 5
   decrementSpeed: 2
   playerTimerBar: {fileID: 0}
+--- !u!114 &3586073095043235962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2376650556538145256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eb612a6c7a6c124d8cec6477acd6606, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lives: 0
+  playerLivesText: {fileID: 0}
 --- !u!1 &5746281430465479232
 GameObject:
   m_ObjectHideFlags: 0

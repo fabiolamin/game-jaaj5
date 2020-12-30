@@ -8,7 +8,7 @@ public abstract class Collectible : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(!hasBeenCollected)
+        if (!hasBeenCollected)
         {
             hasBeenCollected = true;
             AddToPlayer();
