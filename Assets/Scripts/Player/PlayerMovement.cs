@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 movement = Vector2.zero;
     private float horizontalInput;
     private float scaleX = 1f;
-    private bool canJump = false;
+    private bool isJumping = false;
     private float initialHeight = 0;
 
     [SerializeField] private Collider2D footCollider;
@@ -56,14 +56,14 @@ public class PlayerMovement : MonoBehaviour
             SetJump();
         }
 
-        if (Input.GetKey(KeyCode.Space) && canJump)
+        if (Input.GetKey(KeyCode.Space) && isJumping)
         {
             ControlJump();
         }
 
-        if (Input.GetKeyUp(KeyCode.Space) && canJump || IsTouchingRoof())
+        if (Input.GetKeyUp(KeyCode.Space) || IsTouchingRoof())
         {
-            canJump = false;
+            isJumping = false;
         }
     }
 
@@ -76,7 +76,7 @@ public class PlayerMovement : MonoBehaviour
     {
         initialHeight = transform.position.y;
         movement.y = jumpVelocity;
-        canJump = true;
+        isJumping = true;
     }
 
     private void ControlJump()
@@ -87,7 +87,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            canJump = false;
+            isJumping = false;
         }
     }
 
