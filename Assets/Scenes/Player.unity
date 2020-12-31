@@ -164,7 +164,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 125858848}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 72f9aeba26e989f49a83192adaf583f0, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -394,8 +394,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 205323650}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.28, y: -3.42, z: 0}
-  m_LocalScale: {x: 8.306112, y: 1, z: 1}
+  m_LocalPosition: {x: 1.4225, y: -3.42, z: 0}
+  m_LocalScale: {x: 18.02094, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 508546392}
   m_RootOrder: 1
@@ -409,7 +409,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 205323650}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 72f9aeba26e989f49a83192adaf583f0, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -818,24 +818,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 709251625}
   m_CullTransparentMesh: 1
---- !u!1 &1217349889 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2376650556538145256, guid: 91bd94c0bf939e64c970096d1b3b1a18, type: 3}
-  m_PrefabInstance: {fileID: 2376650555771346426}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1217349890
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1217349889}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfcb1de577efd424cbc4dcc34b20dff5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreText: {fileID: 310485480}
 --- !u!1001 &1358521620
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -938,7 +920,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1429548720}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 72f9aeba26e989f49a83192adaf583f0, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -1342,10 +1324,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1352060304, guid: 91bd94c0bf939e64c970096d1b3b1a18, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
+    - target: {fileID: 1217349890, guid: 91bd94c0bf939e64c970096d1b3b1a18, type: 3}
+      propertyPath: scoreText
+      value: 
+      objectReference: {fileID: 310485480}
     - target: {fileID: 1352060304, guid: 91bd94c0bf939e64c970096d1b3b1a18, type: 3}
       propertyPath: playerTimerBar
       value: 
@@ -1397,10 +1379,6 @@ PrefabInstance:
     - target: {fileID: 2376650556538145262, guid: 91bd94c0bf939e64c970096d1b3b1a18, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3586073095043235962, guid: 91bd94c0bf939e64c970096d1b3b1a18, type: 3}
-      propertyPath: lives
-      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3586073095043235962, guid: 91bd94c0bf939e64c970096d1b3b1a18, type: 3}
       propertyPath: playerLivesText
