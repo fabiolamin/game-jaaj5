@@ -6,7 +6,7 @@ public class Enemy : Character
 {
     // Private variables
 
-    //public LootGenerator LootGen;  
+    public LootGenerator LootGen;  
     [SerializeField] protected float movimentSpeed;
     [SerializeField] protected int powerAttack;
 

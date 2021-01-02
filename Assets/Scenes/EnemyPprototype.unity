@@ -587,6 +587,10 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2376650556538145256, guid: 91bd94c0bf939e64c970096d1b3b1a18, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2376650556538145256, guid: 91bd94c0bf939e64c970096d1b3b1a18, type: 3}
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
@@ -640,11 +644,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2376650556538145260, guid: 91bd94c0bf939e64c970096d1b3b1a18, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 4.271631
+      value: 5.125957
       objectReference: {fileID: 0}
     - target: {fileID: 2376650556538145260, guid: 91bd94c0bf939e64c970096d1b3b1a18, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 6.0249996
+      value: 7.2299995
       objectReference: {fileID: 0}
     - target: {fileID: 2376650556538145262, guid: 91bd94c0bf939e64c970096d1b3b1a18, type: 3}
       propertyPath: m_RootOrder
@@ -708,6 +712,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91bd94c0bf939e64c970096d1b3b1a18, type: 3}
+--- !u!1 &1267764526 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4211861531611157647, guid: 0a3612c4ebd8a644a9af8a94ddf394f1, type: 3}
+  m_PrefabInstance: {fileID: 4211861530078191122}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1267764531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1267764526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 628a071d3d23a52449b70c02e95a58ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  On: 1
+  lootNum: 1
+  lootPrefab: {fileID: 879109744699162267, guid: 3de8b84269657d84e96038c7fca78744, type: 3}
 --- !u!1 &1640490568
 GameObject:
   m_ObjectHideFlags: 0
@@ -976,6 +1000,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4211861529975733349, guid: 0a3612c4ebd8a644a9af8a94ddf394f1, type: 3}
+      propertyPath: LootGen
+      value: 
+      objectReference: {fileID: 1267764531}
     - target: {fileID: 4211861529975733350, guid: 0a3612c4ebd8a644a9af8a94ddf394f1, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1121,6 +1149,10 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: 0.12434429
       objectReference: {fileID: 0}
+    - target: {fileID: 5651416367564476528, guid: bc8d2bcbf16cfb84398362f2aa8b52e5, type: 3}
+      propertyPath: LootGen
+      value: 
+      objectReference: {fileID: 7770925268671547139, guid: 8ebe797c55f38124c928937c1930f01c, type: 3}
     - target: {fileID: 5651416367564476529, guid: bc8d2bcbf16cfb84398362f2aa8b52e5, type: 3}
       propertyPath: m_Name
       value: AnubisController
@@ -1194,6 +1226,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5953962499106686565, guid: fa4cc1e056cdad64c8a4bd7329f4bd5e, type: 3}
+      propertyPath: LootGen
+      value: 
+      objectReference: {fileID: 7770925268671547139, guid: 8ebe797c55f38124c928937c1930f01c, type: 3}
     - target: {fileID: 5953962499106686566, guid: fa4cc1e056cdad64c8a4bd7329f4bd5e, type: 3}
       propertyPath: m_RootOrder
       value: 3
