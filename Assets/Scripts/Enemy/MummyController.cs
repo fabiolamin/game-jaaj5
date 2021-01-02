@@ -33,7 +33,6 @@ public class MummyController : Enemy
     }
 
 
-
     // Private Functios
     void Move(int direction) // -1 to move left and 1 to move right
     {
