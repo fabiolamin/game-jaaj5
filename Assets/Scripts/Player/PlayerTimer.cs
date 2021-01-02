@@ -1,14 +1,12 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class PlayerTimer : MonoBehaviour
 {
     private float currentTimer;
     [SerializeField] private float timer = 5f;
     [SerializeField] private float decrementSpeed = 2f;
-    [SerializeField] private float amountToIncrement = 5f;
-    [SerializeField] private Image playerTimerUI;
+    [SerializeField] private Image playerTimerBar;
 
     private void Awake()
     {
@@ -17,35 +15,22 @@ public class PlayerTimer : MonoBehaviour
 
     private void Update()
     {
-        UpdateTimer();
+        UpdateTimer(-(Time.deltaTime * decrementSpeed));
+    }
+
+    public void UpdateTimer(float amount)
+    {
+        currentTimer = Mathf.Clamp(currentTimer + amount, 0, timer);
+        playerTimerBar.fillAmount = currentTimer / timer;
         CheckTimer();
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(collision.gameObject.CompareTag("Finish"))
-        {
-            FillTimer();
-            Destroy(collision.gameObject);
-        }
-    }
-
-    private void UpdateTimer()
-    {
-        currentTimer -= Time.deltaTime * decrementSpeed;
-        playerTimerUI.fillAmount = currentTimer / timer;
     }
 
     private void CheckTimer()
     {
         if (currentTimer <= 0)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            PlayerManager.Instance.PlayerHealth.UpdateHealth(-1);
+            currentTimer = timer;
         }
-    }
-
-    private void FillTimer()
-    {
-        currentTimer = Mathf.Clamp(currentTimer + amountToIncrement, 0, timer);
     }
 }

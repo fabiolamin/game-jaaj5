@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -6,14 +5,15 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D playerRb;
     private Vector2 movement = Vector2.zero;
     private float horizontalInput;
-    private int scaleX = 1;
-    private bool canJump = false;
+    private float scaleX = 1f;
+    private bool isJumping = false;
     private float initialHeight = 0;
 
     [SerializeField] private Collider2D footCollider;
+    [SerializeField] private Collider2D headCollider;
     [SerializeField] private float movementSpeed = 10f;
     [SerializeField] private float jumpVelocity = 50f;
-    [SerializeField] private float maxHeight = 10f;
+    [SerializeField] private float maxJumpingHeight = 10f;
 
     private void Awake()
     {
@@ -22,20 +22,17 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        GetPlayerInput();
+        horizontalInput = Input.GetAxis("Horizontal");
         Rotate();
         Move();
     }
 
-    private void GetPlayerInput()
-    {
-        horizontalInput = Input.GetAxis("Horizontal");
-    }
-
     private void Rotate()
     {
-        if (horizontalInput > 0) { scaleX = 1; }
-        else if (horizontalInput < 0) { scaleX = -1; }
+        if (horizontalInput != 0)
+        {
+            scaleX = Mathf.Sign(horizontalInput);
+        }
 
         transform.localScale = new Vector3(
         scaleX,
@@ -58,38 +55,45 @@ public class PlayerMovement : MonoBehaviour
             SetJump();
         }
 
-        if (Input.GetKey(KeyCode.Space) && canJump)
+        if (Input.GetKey(KeyCode.Space) && isJumping)
         {
             ControlJump();
         }
 
-        if(Input.GetKeyUp(KeyCode.Space) && canJump)
+        if (Input.GetKeyUp(KeyCode.Space) || IsTouchingRoof())
         {
-            canJump = false;
+            isJumping = false;
         }
     }
 
     private bool IsOnTheGround()
     {
-        return Physics2D.IsTouchingLayers(footCollider, LayerMask.GetMask("Ground"));
+        return Physics2D.IsTouchingLayers(footCollider, LayerMask.GetMask("Ground")) ||
+        Physics2D.IsTouchingLayers(footCollider, LayerMask.GetMask("Breakable Ground"));
     }
 
     private void SetJump()
     {
         initialHeight = transform.position.y;
         movement.y = jumpVelocity;
-        canJump = true;
+        isJumping = true;
+        PlayerManager.Instance.PlayerAttack.IsReadyToAttackByAir = true;
     }
 
     private void ControlJump()
     {
-        if (transform.position.y <= initialHeight + maxHeight)
+        if (transform.position.y <= initialHeight + maxJumpingHeight)
         {
             movement.y = jumpVelocity;
         }
         else
         {
-            canJump = false;
+            isJumping = false;
         }
+    }
+
+    public bool IsTouchingRoof()
+    {
+        return Physics2D.IsTouchingLayers(headCollider);
     }
 }
