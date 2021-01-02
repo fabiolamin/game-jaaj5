@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -69,7 +68,8 @@ public class PlayerMovement : MonoBehaviour
 
     private bool IsOnTheGround()
     {
-        return Physics2D.IsTouchingLayers(footCollider, LayerMask.GetMask("Ground"));
+        return Physics2D.IsTouchingLayers(footCollider, LayerMask.GetMask("Ground")) ||
+        Physics2D.IsTouchingLayers(footCollider, LayerMask.GetMask("Breakable Ground"));
     }
 
     private void SetJump()
@@ -77,6 +77,7 @@ public class PlayerMovement : MonoBehaviour
         initialHeight = transform.position.y;
         movement.y = jumpVelocity;
         isJumping = true;
+        PlayerManager.Instance.PlayerAttack.IsReadyToAttackByAir = true;
     }
 
     private void ControlJump()
@@ -91,7 +92,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private bool IsTouchingRoof()
+    public bool IsTouchingRoof()
     {
         return Physics2D.IsTouchingLayers(headCollider);
     }
