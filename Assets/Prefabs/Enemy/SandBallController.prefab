@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5953962498698424246}
   - component: {fileID: 5953962498698424244}
   - component: {fileID: 5953962498698424245}
+  - component: {fileID: 6683554408849318390}
   m_Layer: 0
   m_Name: SandBall
   m_TagString: Untagged
@@ -99,6 +100,21 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &6683554408849318390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5953962498698424247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 628a071d3d23a52449b70c02e95a58ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  On: 1
+  lootNum: 1
+  lootPrefab: {fileID: 0}
 --- !u!1 &5953962499106686568
 GameObject:
   m_ObjectHideFlags: 0
@@ -147,7 +163,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 6.26
+  m_Radius: 4.15
 --- !u!114 &5953962499106686565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,6 +179,7 @@ MonoBehaviour:
   alive: 1
   lives: 2
   actualLive: 0
+  LootGen: {fileID: 6683554408849318390}
   movimentSpeed: 4
   powerAttack: 1
   sandBallTransform: {fileID: 5953962498698424246}
