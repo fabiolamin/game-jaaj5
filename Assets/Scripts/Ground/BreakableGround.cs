@@ -32,7 +32,7 @@ public class BreakableGround : MonoBehaviour
     private void Break()
     {
         PlayerManager.Instance.PlayerAttack.IsReadyToAttackByAir = false;
-        Instantiate(breakableGroundParticles, transform.position, Quaternion.identity);
+        Instantiate(breakableGroundParticles, transform.position, Quaternion.identity, transform.parent);
         gameObject.SetActive(false);
     }
 }
