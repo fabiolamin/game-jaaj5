@@ -32,6 +32,14 @@ public class MummyController : Enemy
 
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            Hit(1);
+        }
+    }
+
 
     // Private Functios
     void Move(int direction) // -1 to move left and 1 to move right
@@ -65,13 +73,12 @@ public class MummyController : Enemy
     protected override void Die()
     {
         alive = false;
+        LootGen.Generate();
+        LootGen.On = false;
         //anim die
         StartCoroutine(Revive());
     }
-    protected override void Hit(int damage)
-    {      
-        base.Hit(damage);
-    }
+  
     IEnumerator Revive()
     {
         yield return new WaitForSeconds(reviveCooldown);
