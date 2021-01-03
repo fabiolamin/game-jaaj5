@@ -30,4 +30,18 @@ public class PlayerManager : MonoBehaviour
         PlayerScore = GetComponent<PlayerScore>();
         PlayerAttack = GetComponent<PlayerAttack>();
     }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        CheckForCollectibles(other);
+    }
+
+    private static void CheckForCollectibles(Collision2D other)
+    {
+        Collectible collectible = other.gameObject.GetComponent<Collectible>();
+        if (collectible)
+        {
+            collectible.AddToPlayer();
+        }
+    }
 }
