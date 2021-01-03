@@ -1178,6 +1178,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 508546392}
     m_Modifications:
     - target: {fileID: 3307790420597306444, guid: 32816015f25c9c94a9945fc4d900d618, type: 3}
+      propertyPath: canSpawnCollectibles
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3307790420597306444, guid: 32816015f25c9c94a9945fc4d900d618, type: 3}
       propertyPath: collectibles.Array.size
       value: 2
       objectReference: {fileID: 0}

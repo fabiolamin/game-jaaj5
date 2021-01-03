@@ -41,9 +41,12 @@ public class BreakableGround : MonoBehaviour
 
     private void SpawnCollectibles()
     {
-        foreach(var collectible in collectibles)
+        if (canSpawnCollectibles)
         {
-            Instantiate(collectible, transform.position, Quaternion.identity);
+            foreach (var collectible in collectibles)
+            {
+                Instantiate(collectible, transform.position, Quaternion.identity);
+            }
         }
     }
 }
