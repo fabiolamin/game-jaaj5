@@ -1,19 +1,50 @@
+using System.Collections;
 using UnityEngine;
 
-[RequireComponent(typeof(Collider2D))]
 public abstract class Collectible : MonoBehaviour
 {
-    protected bool hasBeenCollected = false;
+    private Rigidbody2D collectibleRb;
+    private Collider2D collectibleCollider;
     [SerializeField] protected int amount;
+    [SerializeField] private float followSpeed = 5f;
+    [SerializeField] private float spawnForce = 5f;
+    [SerializeField] private float delayToBeCaught = 3f;
 
-    private void OnTriggerEnter2D(Collider2D other)
+    public bool IsReadyToFollowPlayer { get; set; } = false;
+
+    private void Awake()
     {
-        if (!hasBeenCollected)
+        collectibleRb = GetComponent<Rigidbody2D>();
+        collectibleCollider = GetComponent<Collider2D>();
+        collectibleCollider.enabled = false;
+        SetRandomDirection();
+        StartCoroutine(AwaitToBeCaught());
+    }
+
+    private void Update()
+    {
+        if (IsReadyToFollowPlayer)
         {
-            hasBeenCollected = true;
-            AddToPlayer();
+            collectibleRb.velocity = Vector2.zero;
+            FollowPlayer();
         }
     }
 
-    protected abstract void AddToPlayer();
+    private void SetRandomDirection()
+    {
+        collectibleRb.velocity = Random.insideUnitCircle.normalized * spawnForce;
+    }
+
+    private IEnumerator AwaitToBeCaught()
+    {
+        yield return new WaitForSeconds(delayToBeCaught);
+        collectibleCollider.enabled = true;
+    }
+
+    private void FollowPlayer()
+    {
+        transform.position = Vector3.MoveTowards(transform.position, PlayerManager.Instance.transform.position, followSpeed * Time.deltaTime);
+    }
+
+    public abstract void AddToPlayer();
 }
