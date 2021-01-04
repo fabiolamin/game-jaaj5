@@ -5,7 +5,6 @@ public class Collectible : MonoBehaviour
 {
     private Rigidbody2D collectibleRb;
     private Collider2D collectibleCollider;
-    private bool hasBeenCaught = false;
 
     [Header("Amount")]
     [SerializeField] protected int timerAmount = 3;
@@ -15,16 +14,17 @@ public class Collectible : MonoBehaviour
     [SerializeField] private float followSpeed = 5f;
     [SerializeField] private float spawnForce = 5f;
     [SerializeField] private float delayToBeCaught = 3f;
-    [SerializeField] private Color[] colors;
 
+    public bool HasBeenCaught { get; set; }
     public bool IsReadyToFollowPlayer { get; set; } = false;
+    public int TimerAmount { get { return timerAmount; } }
+    public int PointsAmount { get { return pointsAmount; } }
 
     private void Awake()
     {
         collectibleRb = GetComponent<Rigidbody2D>();
         collectibleCollider = GetComponent<Collider2D>();
         collectibleCollider.enabled = false;
-        SetRandomColor();
         SetRandomDirection();
         StartCoroutine(AwaitToBeCaught());
     }
@@ -36,11 +36,6 @@ public class Collectible : MonoBehaviour
             collectibleRb.velocity = Vector2.zero;
             FollowPlayer();
         }
-    }
-
-    private void SetRandomColor()
-    {
-        GetComponent<SpriteRenderer>().color = colors[Random.Range(0, colors.Length)];
     }
 
     private void SetRandomDirection()
@@ -57,16 +52,5 @@ public class Collectible : MonoBehaviour
     private void FollowPlayer()
     {
         transform.position = Vector3.MoveTowards(transform.position, PlayerManager.Instance.transform.position, followSpeed * Time.deltaTime);
-    }
-
-    public void AddToPlayer()
-    {
-        if (!hasBeenCaught)
-        {
-            hasBeenCaught = true;
-            PlayerManager.Instance.PlayerTimer.UpdateTimer(timerAmount);
-            PlayerManager.Instance.PlayerScore.AddScore(pointsAmount);
-            gameObject.SetActive(false);
-        }
     }
 }

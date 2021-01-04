@@ -35,15 +35,23 @@ public class PlayerManager : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        CheckForCollectibles(other);
+        CheckForCollectible(other);
     }
 
-    private static void CheckForCollectibles(Collision2D other)
+    private void CheckForCollectible(Collision2D other)
     {
         Collectible collectible = other.gameObject.GetComponent<Collectible>();
-        if (collectible)
+        if (collectible && !collectible.HasBeenCaught)
         {
-            collectible.AddToPlayer();
+            CatchCollectible(collectible);
         }
+    }
+
+    private void CatchCollectible(Collectible collectible)
+    {
+        collectible.HasBeenCaught = true;
+        PlayerTimer.UpdateTimer(collectible.TimerAmount);
+        PlayerScore.AddScore(collectible.PointsAmount);
+        collectible.gameObject.SetActive(false);
     }
 }
