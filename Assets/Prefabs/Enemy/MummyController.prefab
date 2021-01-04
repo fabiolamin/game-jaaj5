@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1030838490
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1030838491}
+  m_Layer: 10
+  m_Name: RayOrigin
+  m_TagString: Untagged
+  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1030838491
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030838490}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.23, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4211861531611157644}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4211861529975733344
 GameObject:
   m_ObjectHideFlags: 0
@@ -52,6 +82,11 @@ MonoBehaviour:
   LootGen: {fileID: 1267764531}
   movimentSpeed: 200
   powerAttack: 1
+  layerChangeDirection:
+    serializedVersion: 2
+    m_Bits: 1024
+  rayOrigin: {fileID: 1030838491}
+  RayRange: 0.3
   isMoving: 1
   minPos: {fileID: 4211861530102969368}
   maxPos: {fileID: 4211861530436956529}
@@ -82,7 +117,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4211861530102969371}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.63, y: -0.851, z: 0}
+  m_LocalPosition: {x: -5.96, y: -0.851, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4211861529975733350}
@@ -112,7 +147,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4211861530436956528}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.46, y: -0.82, z: 0}
+  m_LocalPosition: {x: 2.09, y: -0.82, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4211861529975733350}
@@ -213,9 +248,9 @@ GameObject:
   - component: {fileID: 4211861531611157683}
   - component: {fileID: 4211861531611157682}
   - component: {fileID: 1267764531}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Mummy
-  m_TagString: Untagged
+  m_TagString: Terrestrial
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -232,6 +267,7 @@ Transform:
   m_LocalScale: {x: 0.6578599, y: 0.6578599, z: 0.6578599}
   m_Children:
   - {fileID: 4211861531322963288}
+  - {fileID: 1030838491}
   m_Father: {fileID: 4211861529975733350}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

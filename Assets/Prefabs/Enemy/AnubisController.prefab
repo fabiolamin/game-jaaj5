@@ -1,5 +1,76 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &527476579
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 527476580}
+  - component: {fileID: 527476582}
+  - component: {fileID: 527476581}
+  m_Layer: 0
+  m_Name: attackCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &527476580
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 527476579}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.51, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5651416366298417719}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &527476582
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 527476579}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 1.0256381, y: -0.4896583}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.88089323, y: 4.0173626}
+  m_EdgeRadius: 0
+--- !u!114 &527476581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 527476579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 768b8f449c155474a9152cb86d4b5ad2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 5651416367564476528}
 --- !u!1 &5651416366287150031
 GameObject:
   m_ObjectHideFlags: 0
@@ -24,7 +95,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5651416366287150031}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.337, y: -0.373, z: 0}
+  m_LocalPosition: {x: 1.69, y: -0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5651416366298417719}
@@ -44,9 +115,9 @@ GameObject:
   - component: {fileID: 5651416366298417718}
   - component: {fileID: 5651416366298417707}
   - component: {fileID: 1713907547925864059}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Anubis
-  m_TagString: Untagged
+  m_TagString: Terrestrial
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59,12 +130,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5651416366298417712}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.51, z: 0}
+  m_LocalPosition: {x: -0.32, y: -0.52, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5651416367034710316}
   - {fileID: 5651416366287150030}
   - {fileID: 5651416366670504327}
+  - {fileID: 527476580}
   m_Father: {fileID: 5651416367564476535}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -378,7 +450,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5651416367128253656}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.4300003, y: -1.23, z: 0}
+  m_LocalPosition: {x: 6.35, y: -1.23, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5651416367564476535}
@@ -396,7 +468,7 @@ GameObject:
   - component: {fileID: 5651416367564476528}
   m_Layer: 0
   m_Name: AnubisController
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -436,16 +508,16 @@ MonoBehaviour:
   LootGen: {fileID: 1713907547925864059}
   movimentSpeed: 130
   powerAttack: 0
-  isMoving: 1
-  LayerAttack:
+  layerChangeDirection:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 1024
+  rayOrigin: {fileID: 5651416366287150030}
+  RayRange: 0.3
+  isMoving: 1
   minPos: {fileID: 5651416367624865029}
   maxPos: {fileID: 5651416367128253663}
   anubisRb: {fileID: 5651416366298417717}
   anubisTransform: {fileID: 5651416366298417719}
-  rayOrigin: {fileID: 5651416366287150030}
-  attackRange: 1.6
   anubisAnim: {fileID: 5651416366298417707}
 --- !u!1 &5651416367624865030
 GameObject:
