@@ -23,12 +23,10 @@ public class MummyController : Enemy
             {
                 Move(direction);
                 DirectionCheck();
-
+                ChangeDirectionRaycast();
             }
-
-           
-        }
-        
+  
+        }    
 
     }
 
@@ -86,4 +84,19 @@ public class MummyController : Enemy
         alive = true;
     }
 
+    public override void ChangeDirectionRaycast()
+    {
+        raycastHit = Physics2D.Raycast(rayOrigin.position, Vector3.right * direction, RayRange, layerChangeDirection);
+
+        if (raycastHit.collider)
+        {
+
+            if (raycastHit.collider.CompareTag("Terrestrial"))
+            {             
+                direction *= -1;
+                mummyTransform.localScale = new Vector2(mummyTransform.localScale.x * -1, mummyTransform.localScale.y);
+            }
+
+        }
+    }
 }

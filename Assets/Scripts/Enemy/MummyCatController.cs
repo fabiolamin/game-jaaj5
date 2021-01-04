@@ -37,9 +37,9 @@ public class MummyCatController : Enemy
             {
                 Move(direction);
                 DirectionCheck();
+                ChangeDirectionRaycast();
 
             }
-
 
         }
 
@@ -101,6 +101,22 @@ public class MummyCatController : Enemy
     protected override void Hit(int damage)
     {
         base.Hit(damage);
+    }
+
+    public override void ChangeDirectionRaycast()
+    {
+        raycastHit = Physics2D.Raycast(rayOrigin.position, Vector3.right * direction, RayRange, layerChangeDirection);
+
+        if (raycastHit.collider)
+        {
+
+            if (raycastHit.collider.CompareTag("Terrestrial"))
+            {
+                direction *= -1;
+                catTransform.localScale = new Vector2(catTransform.localScale.x * -1, catTransform.localScale.y);
+            }
+
+        }
     }
 
 }

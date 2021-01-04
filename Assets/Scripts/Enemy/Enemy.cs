@@ -6,9 +6,17 @@ public class Enemy : Character
 {
     // Private variables
 
-    public LootGenerator LootGen;  
+    public LootGenerator LootGen;
+   
     [SerializeField] protected float movimentSpeed;
     [SerializeField] protected int powerAttack;
+
+    [SerializeField] protected LayerMask layerChangeDirection;
+    [SerializeField] protected Transform rayOrigin;
+    [SerializeField] protected float RayRange;
+
+
+    protected  RaycastHit2D raycastHit;
 
     private void Start()
     {
@@ -16,8 +24,13 @@ public class Enemy : Character
     }
     // Private Functions
 
-    protected virtual void Attack(Character character) // need a player to attack
+    public virtual void Attack(Character character) // need a player to attack
     {
-       // character.Hit(1);
+        // character.Hit(1);
+    }
+
+    public virtual void ChangeDirectionRaycast() 
+    {
+       //
     }
 }
