@@ -6,9 +6,9 @@ public class LootGenerator : MonoBehaviour
 {
    // public bool StartOn;
     public bool On;
-
-    [SerializeField] int lootNum;
-    [SerializeField] GameObject lootPrefab;
+    [SerializeField] bool RandomLoot;
+    [SerializeField] int MinDropNum, MaxDropNum;
+    [SerializeField] GameObject[] lootPrefab;
 
     private void Start()
     {
@@ -24,14 +24,11 @@ public class LootGenerator : MonoBehaviour
     {
         if (On) 
         {
-            if (lootNum == 1)
-            {
-                /*GameObject lootObj =*/
-                Instantiate(lootPrefab, transform.position, Quaternion.identity);
-                //  lootObj.AddForce
-
+            if (lootPrefab.Length == 1)
+            {           
+                Instantiate(lootPrefab[0], transform.position, Quaternion.identity);  
             }
-            else if (lootNum > 1)
+            else if (lootPrefab.Length > 1)
             {
                 StartCoroutine(GenerateMultLoot());
             }
@@ -41,11 +38,25 @@ public class LootGenerator : MonoBehaviour
 
     IEnumerator GenerateMultLoot() 
     {
-        for (int i = 0; i < lootNum; i++)
+        if (RandomLoot) 
         {
-            Instantiate(lootPrefab, transform.position, Quaternion.identity);
-            yield return null;
+          int  X = Random.Range(MinDropNum, MaxDropNum + 1);
+
+            for (int i = 0; i < X; i++)
+            {
+                Instantiate(lootPrefab[Random.Range(0,lootPrefab.Length)], transform.position, Quaternion.identity);
+            }
+            
         }
+        else 
+        {
+            for (int i = 0; i < lootPrefab.Length; i++)
+            {
+                Instantiate(lootPrefab[i], transform.position, Quaternion.identity);
+                yield return null;
+            }
+        }
+       
        
     }
 }
