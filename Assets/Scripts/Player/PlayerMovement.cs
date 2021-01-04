@@ -46,6 +46,7 @@ public class PlayerMovement : MonoBehaviour
         movement.x = horizontalInput * movementSpeed;
         CheckJump();
         playerRb.velocity = movement;
+        PlayerManager.Instance.PlayerAnimator.SetBool("IsMoving", horizontalInput != 0);
     }
 
     private void CheckJump()
@@ -64,9 +65,11 @@ public class PlayerMovement : MonoBehaviour
         {
             isJumping = false;
         }
+
+        PlayerManager.Instance.PlayerAnimator.SetBool("IsJumping", !IsOnTheGround());
     }
 
-    private bool IsOnTheGround()
+    public bool IsOnTheGround()
     {
         return Physics2D.IsTouchingLayers(footCollider, LayerMask.GetMask("Ground")) ||
         Physics2D.IsTouchingLayers(footCollider, LayerMask.GetMask("Breakable Ground"));
@@ -78,6 +81,7 @@ public class PlayerMovement : MonoBehaviour
         movement.y = jumpVelocity;
         isJumping = true;
         PlayerManager.Instance.PlayerAttack.IsReadyToAttackByAir = true;
+        PlayerManager.Instance.PlayerAnimator.SetTrigger("Jump");
     }
 
     private void ControlJump()
