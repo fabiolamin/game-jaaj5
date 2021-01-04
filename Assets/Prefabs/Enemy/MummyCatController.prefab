@@ -114,7 +114,7 @@ MonoBehaviour:
   powerAttack: 1
   layerChangeDirection:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 2048
   rayOrigin: {fileID: 1064487687}
   RayRange: 0.3
   MovingOnAweke: 1
