@@ -5,8 +5,11 @@ public class BreakableGround : MonoBehaviour
 {
     [SerializeField] private float delayToBreak = 0.1f;
     [SerializeField] private GameObject breakableGroundParticles;
+
+    [Header("Collectibles Spawning")]
     [SerializeField] private bool canSpawnCollectibles = true;
-    [SerializeField] private Collectible[] collectibles;
+    [SerializeField] private Collectible collectible;
+    [SerializeField] private int amountToSpawn = 2;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -43,7 +46,7 @@ public class BreakableGround : MonoBehaviour
     {
         if (canSpawnCollectibles)
         {
-            foreach (var collectible in collectibles)
+            for (int x = 0; x < amountToSpawn; x++)
             {
                 Instantiate(collectible, transform.position, Quaternion.identity);
             }
