@@ -84,7 +84,7 @@ MonoBehaviour:
   powerAttack: 1
   layerChangeDirection:
     serializedVersion: 2
-    m_Bits: 2048
+    m_Bits: 4096
   rayOrigin: {fileID: 1030838491}
   RayRange: 0.3
   isMoving: 1
@@ -372,5 +372,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   On: 1
-  lootNum: 1
-  lootPrefab: {fileID: 879109744699162267, guid: 3de8b84269657d84e96038c7fca78744, type: 3}
+  RandomLoot: 0
+  MinDropNum: 1
+  MaxDropNum: 5
+  lootPrefab:
+  - {fileID: 8248059713621048905, guid: 5907bed409131274bafb08c10c2d408d, type: 3}
+  - {fileID: 2376919570109378153, guid: bbc61e759fffc4f47b6b032a5c63c287, type: 3}
+  - {fileID: 9133748315542210917, guid: 1e5d46c812074bd4088ef6a657374b56, type: 3}

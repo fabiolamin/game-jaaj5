@@ -109,7 +109,7 @@ public class MummyCatController : Enemy
 
         if (raycastHit.collider)
         {
-            Debug.Log("colidiu com " + raycastHit.collider.name);
+
             if (raycastHit.collider.CompareTag("Terrestrial"))
             {
                 direction *= -1;

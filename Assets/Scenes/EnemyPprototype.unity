@@ -976,21 +976,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: MummyController
       objectReference: {fileID: 0}
-    - target: {fileID: 4211861529975733349, guid: 0a3612c4ebd8a644a9af8a94ddf394f1, type: 3}
-      propertyPath: layerChangeDirection.m_Bits
-      value: 4096
-      objectReference: {fileID: 0}
     - target: {fileID: 4211861529975733350, guid: 0a3612c4ebd8a644a9af8a94ddf394f1, type: 3}
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4211861529975733350, guid: 0a3612c4ebd8a644a9af8a94ddf394f1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.75
+      value: 2.79
       objectReference: {fileID: 0}
     - target: {fileID: 4211861529975733350, guid: 0a3612c4ebd8a644a9af8a94ddf394f1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.88
+      value: 8.15
       objectReference: {fileID: 0}
     - target: {fileID: 4211861529975733350, guid: 0a3612c4ebd8a644a9af8a94ddf394f1, type: 3}
       propertyPath: m_LocalPosition.z
