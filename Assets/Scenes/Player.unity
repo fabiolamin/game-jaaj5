@@ -1109,10 +1109,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 310485480}
     - target: {fileID: 1352060304, guid: 91bd94c0bf939e64c970096d1b3b1a18, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1352060304, guid: 91bd94c0bf939e64c970096d1b3b1a18, type: 3}
       propertyPath: playerTimerBar
       value: 
       objectReference: {fileID: 543651429}
@@ -1203,11 +1199,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3307790420597306447, guid: 32816015f25c9c94a9945fc4d900d618, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.55
+      value: 2.45
       objectReference: {fileID: 0}
     - target: {fileID: 3307790420597306447, guid: 32816015f25c9c94a9945fc4d900d618, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.08
+      value: 0.28
       objectReference: {fileID: 0}
     - target: {fileID: 3307790420597306447, guid: 32816015f25c9c94a9945fc4d900d618, type: 3}
       propertyPath: m_LocalPosition.z

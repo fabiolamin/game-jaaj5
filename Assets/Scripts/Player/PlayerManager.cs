@@ -20,6 +20,7 @@ public class PlayerManager : MonoBehaviour
     public PlayerHealth PlayerHealth { get; private set; }
     public PlayerScore PlayerScore { get; private set; }
     public PlayerAttack PlayerAttack { get; private set; }
+    public Animator PlayerAnimator { get; private set; }
 
     private void Awake()
     {
@@ -29,6 +30,7 @@ public class PlayerManager : MonoBehaviour
         PlayerHealth = GetComponent<PlayerHealth>();
         PlayerScore = GetComponent<PlayerScore>();
         PlayerAttack = GetComponent<PlayerAttack>();
+        PlayerAnimator = GetComponent<Animator>();
     }
 
     private void OnCollisionEnter2D(Collision2D other)
