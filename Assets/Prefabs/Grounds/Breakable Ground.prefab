@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3307790420597306447}
   - component: {fileID: 3307790420597306442}
   - component: {fileID: 3307790420597306445}
+  - component: {fileID: 7397380469024877129}
   - component: {fileID: 3307790420597306444}
   m_Layer: 9
   m_Name: Breakable Ground
@@ -110,6 +111,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &7397380469024877129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3307790420597306446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 628a071d3d23a52449b70c02e95a58ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  On: 1
+  RandomLoot: 1
+  MinDropNum: 1
+  MaxDropNum: 4
+  lootPrefab:
+  - {fileID: 8248059713621048905, guid: 5907bed409131274bafb08c10c2d408d, type: 3}
 --- !u!114 &3307790420597306444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,6 +143,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delayToBreak: 0.1
   breakableGroundParticles: {fileID: 8138706945490724667, guid: b9a946a4bbe9b6248b3debea6765eeb6, type: 3}
-  canSpawnCollectibles: 1
-  collectible: {fileID: 4200369883566887933, guid: 5907bed409131274bafb08c10c2d408d, type: 3}
-  amountToSpawn: 2

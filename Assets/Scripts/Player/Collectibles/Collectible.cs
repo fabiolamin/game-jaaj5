@@ -14,7 +14,6 @@ public class Collectible : MonoBehaviour
     [SerializeField] private float followSpeed = 5f;
     [SerializeField] private float spawnForce = 5f;
     [SerializeField] private float delayToBeCaught = 3f;
-    [SerializeField] private Color[] colors;
 
     public bool HasBeenCaught { get; set; }
     public bool IsReadyToFollowPlayer { get; set; } = false;
@@ -26,7 +25,6 @@ public class Collectible : MonoBehaviour
         collectibleRb = GetComponent<Rigidbody2D>();
         collectibleCollider = GetComponent<Collider2D>();
         collectibleCollider.enabled = false;
-        SetRandomColor();
         SetRandomDirection();
         StartCoroutine(AwaitToBeCaught());
     }
@@ -38,11 +36,6 @@ public class Collectible : MonoBehaviour
             collectibleRb.velocity = Vector2.zero;
             FollowPlayer();
         }
-    }
-
-    private void SetRandomColor()
-    {
-        GetComponent<SpriteRenderer>().color = colors[Random.Range(0, colors.Length)];
     }
 
     private void SetRandomDirection()
