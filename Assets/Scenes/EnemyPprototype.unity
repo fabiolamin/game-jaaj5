@@ -917,7 +917,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1908617798831631876, guid: e5012c52494e39b4e9b43a6d66d252dc, type: 3}
       propertyPath: layerChangeDirection.m_Bits
-      value: 2048
+      value: 4096
       objectReference: {fileID: 0}
     - target: {fileID: 1908617798831631877, guid: e5012c52494e39b4e9b43a6d66d252dc, type: 3}
       propertyPath: m_RootOrder
@@ -978,7 +978,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4211861529975733349, guid: 0a3612c4ebd8a644a9af8a94ddf394f1, type: 3}
       propertyPath: layerChangeDirection.m_Bits
-      value: 2048
+      value: 4096
       objectReference: {fileID: 0}
     - target: {fileID: 4211861529975733350, guid: 0a3612c4ebd8a644a9af8a94ddf394f1, type: 3}
       propertyPath: m_RootOrder
@@ -1035,7 +1035,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5651416367564476528, guid: bc8d2bcbf16cfb84398362f2aa8b52e5, type: 3}
       propertyPath: layerChangeDirection.m_Bits
-      value: 2048
+      value: 4096
       objectReference: {fileID: 0}
     - target: {fileID: 5651416367564476529, guid: bc8d2bcbf16cfb84398362f2aa8b52e5, type: 3}
       propertyPath: m_Name
@@ -1141,10 +1141,6 @@ PrefabInstance:
     - target: {fileID: 5953962499106686568, guid: fa4cc1e056cdad64c8a4bd7329f4bd5e, type: 3}
       propertyPath: m_Name
       value: SandBallController
-      objectReference: {fileID: 0}
-    - target: {fileID: 5953962499106686568, guid: fa4cc1e056cdad64c8a4bd7329f4bd5e, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa4cc1e056cdad64c8a4bd7329f4bd5e, type: 3}

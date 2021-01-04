@@ -248,7 +248,7 @@ GameObject:
   - component: {fileID: 4211861531611157683}
   - component: {fileID: 4211861531611157682}
   - component: {fileID: 1267764531}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: Mummy
   m_TagString: Terrestrial
   m_Icon: {fileID: 0}

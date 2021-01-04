@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 1908617799000912049}
   - component: {fileID: 1908617799000912062}
   - component: {fileID: 732648220}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: MummyCat
   m_TagString: Terrestrial
   m_Icon: {fileID: 0}

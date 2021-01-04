@@ -115,7 +115,7 @@ GameObject:
   - component: {fileID: 5651416366298417718}
   - component: {fileID: 5651416366298417707}
   - component: {fileID: 1713907547925864059}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: Anubis
   m_TagString: Terrestrial
   m_Icon: {fileID: 0}
