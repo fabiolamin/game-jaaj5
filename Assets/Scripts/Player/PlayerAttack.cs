@@ -8,14 +8,24 @@ public class PlayerAttack : MonoBehaviour
 
     private void Update()
     {
-        SetAirAttackInput();
-        PlayerManager.Instance.PlayerAnimator.SetBool("IsAttackingByAir", airAttackInput);
+        SetAirAttack();
+        SetDefaultAttack();
     }
 
-    private void SetAirAttackInput()
+    private void SetAirAttack()
     {
         airAttackInput = Input.GetKey(KeyCode.DownArrow) &&
         !PlayerManager.Instance.PlayerMovement.IsOnTheGround();
+
+        PlayerManager.Instance.PlayerAnimator.SetBool("IsAttackingByAir", airAttackInput);
+    }
+
+    private void SetDefaultAttack()
+    {
+        if(Input.GetKeyDown(KeyCode.A))
+        {
+            PlayerManager.Instance.PlayerAnimator.SetTrigger("DefaultAttack");
+        }
     }
 
     public bool CanAttackByAir()
@@ -23,5 +33,11 @@ public class PlayerAttack : MonoBehaviour
         return IsReadyToAttackByAir &&
         airAttackInput &&
         !PlayerManager.Instance.PlayerMovement.IsTouchingRoof();
+    }
+
+    public bool CanBreakTheGround()
+    {
+        return CanAttackByAir() &&
+        PlayerManager.Instance.PlayerMovement.IsOnTheGround();
     }
 }
