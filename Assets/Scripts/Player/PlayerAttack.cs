@@ -34,4 +34,10 @@ public class PlayerAttack : MonoBehaviour
         airAttackInput &&
         !PlayerManager.Instance.PlayerMovement.IsTouchingRoof();
     }
+
+    public bool CanBreakTheGround()
+    {
+        return CanAttackByAir() &&
+        PlayerManager.Instance.PlayerMovement.IsOnTheGround();
+    }
 }

@@ -13,14 +13,14 @@ public class BreakableGround : MonoBehaviour
         lootGenerator = GetComponent<LootGenerator>();    
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        CheckIfPlayerCanBreak();
+        CheckIfCanBeBroken();
     }
 
-    private void CheckIfPlayerCanBreak()
+    private void CheckIfCanBeBroken()
     {
-        if (PlayerManager.Instance.PlayerAttack.CanAttackByAir())
+        if (PlayerManager.Instance.PlayerAttack.CanBreakTheGround())
         {
             StartCoroutine(AwaitToBreak());
         }
