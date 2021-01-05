@@ -1,16 +1,14 @@
 using UnityEngine;
-using System.Collections;
 
 public class BreakableGround : MonoBehaviour
 {
     private LootGenerator lootGenerator;
 
-    [SerializeField] private float delayToBreak = 0.1f;
     [SerializeField] private GameObject breakableGroundParticles;
 
     private void Awake()
     {
-        lootGenerator = GetComponent<LootGenerator>();    
+        lootGenerator = GetComponent<LootGenerator>();
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -22,18 +20,12 @@ public class BreakableGround : MonoBehaviour
     {
         if (PlayerManager.Instance.PlayerAttack.CanBreakTheGround())
         {
-            StartCoroutine(AwaitToBreak());
+            Break();
         }
         else
         {
             PlayerManager.Instance.PlayerAttack.IsReadyToAttackByAir = false;
         }
-    }
-
-    private IEnumerator AwaitToBreak()
-    {
-        yield return new WaitForSeconds(delayToBreak);
-        Break();
     }
 
     private void Break()
