@@ -14,6 +14,8 @@ public class PlayerAttack : MonoBehaviour
     {
         SetAirAttack();
         SetDefaultAttack();
+
+        Debug.DrawRay(transform.position, transform.forward * defaultAttackRange, Color.red);
     }
 
     private void SetAirAttack()
