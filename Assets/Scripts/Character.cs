@@ -12,7 +12,7 @@ public class Character : MonoBehaviour
         actualLive = lives;
     }
 
-    protected virtual void Hit(int damage)
+    public virtual void Hit(int damage)
     {
         actualLive -= damage;
 

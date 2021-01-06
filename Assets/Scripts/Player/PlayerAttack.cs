@@ -5,6 +5,8 @@ public class PlayerAttack : MonoBehaviour
     private bool airAttackInput;
 
     [SerializeField] private Collider2D footCollider;
+    [SerializeField] private float defaultAttackRange = 5f;
+    [SerializeField] private int defaultAttackDamage = 5;
 
     public bool IsReadyToAttackByAir { get; set; } = false;
 
@@ -27,6 +29,13 @@ public class PlayerAttack : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.A))
         {
             PlayerManager.Instance.PlayerAnimator.SetTrigger("DefaultAttack");
+
+            RaycastHit2D target = Physics2D.Raycast(transform.position, transform.forward, defaultAttackRange, LayerMask.GetMask("Enemy"));
+
+            if(target)
+            {
+                target.collider.GetComponent<Enemy>().Hit(defaultAttackDamage);
+            }
         }
     }
 
