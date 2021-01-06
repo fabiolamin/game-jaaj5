@@ -100,13 +100,13 @@ GameObject:
   m_Component:
   - component: {fileID: 5810541342542342121}
   - component: {fileID: 5810541342542342120}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: ScorpionController
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5810541342542342121
 Transform:
   m_ObjectHideFlags: 0
@@ -151,7 +151,7 @@ MonoBehaviour:
   isMoving: 1
   minPos: {fileID: 5810541342210280666}
   maxPos: {fileID: 5810541342284954398}
-  followSpeed: 10
+  followSpeed: 13
   scorpRb: {fileID: 5810541343556284100}
   scorpTransform: {fileID: 5810541343556284105}
   scorpAnim: {fileID: 0}

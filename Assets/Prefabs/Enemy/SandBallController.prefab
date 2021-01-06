@@ -113,8 +113,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   On: 1
-  lootNum: 1
-  lootPrefab: {fileID: 0}
+  RandomLoot: 0
+  MinDropNum: 0
+  MaxDropNum: 0
+  lootPrefab:
+  - {fileID: 0}
 --- !u!1 &5953962499106686568
 GameObject:
   m_ObjectHideFlags: 0
@@ -128,11 +131,11 @@ GameObject:
   - component: {fileID: 5953962499106686565}
   m_Layer: 0
   m_Name: SandBallController
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5953962499106686566
 Transform:
   m_ObjectHideFlags: 0

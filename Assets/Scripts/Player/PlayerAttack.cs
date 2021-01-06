@@ -14,6 +14,7 @@ public class PlayerAttack : MonoBehaviour
     {
         SetAirAttack();
         CheckDefaultAttack();
+
     }
 
     private void SetAirAttack()
