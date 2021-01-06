@@ -70,7 +70,7 @@ public class AnubisController : Enemy
         alive = false;
         //anim die
     }
-    protected override void Hit(int damage)
+    public override void Hit(int damage)
     {
         base.Hit(damage);
     }
