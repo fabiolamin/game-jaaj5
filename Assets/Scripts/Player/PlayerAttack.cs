@@ -13,9 +13,7 @@ public class PlayerAttack : MonoBehaviour
     private void Update()
     {
         SetAirAttack();
-        SetDefaultAttack();
-
-        Debug.DrawRay(transform.position, transform.forward * defaultAttackRange, Color.red);
+        CheckDefaultAttack();
     }
 
     private void SetAirAttack()
@@ -26,18 +24,25 @@ public class PlayerAttack : MonoBehaviour
         PlayerManager.Instance.PlayerAnimator.SetBool("IsAttackingByAir", airAttackInput);
     }
 
-    private void SetDefaultAttack()
+    private void CheckDefaultAttack()
     {
         if(Input.GetKeyDown(KeyCode.A))
         {
-            PlayerManager.Instance.PlayerAnimator.SetTrigger("DefaultAttack");
+            SetDefaultAttack();
+        }
+    }
 
-            RaycastHit2D target = Physics2D.Raycast(transform.position, transform.forward, defaultAttackRange, LayerMask.GetMask("Enemy"));
+    private void SetDefaultAttack()
+    {
+        PlayerManager.Instance.PlayerAnimator.SetTrigger("DefaultAttack");
 
-            if(target)
-            {
-                target.collider.GetComponent<Enemy>().Hit(defaultAttackDamage);
-            }
+        Vector2 forward = PlayerManager.Instance.PlayerMovement.ForwardDirection;
+        RaycastHit2D target = Physics2D.Raycast(transform.position, forward, defaultAttackRange, LayerMask.GetMask("Enemy"));
+
+        if (target)
+        {
+            Enemy enemy = target.collider.transform.root.GetComponent<Enemy>();
+            enemy.Hit(defaultAttackDamage);
         }
     }
 

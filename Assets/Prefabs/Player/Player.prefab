@@ -282,6 +282,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   footCollider: {fileID: 4117901212894797014}
+  defaultAttackRange: 5
+  defaultAttackDamage: 5
 --- !u!95 &2376650555771346428
 Animator:
   serializedVersion: 3
