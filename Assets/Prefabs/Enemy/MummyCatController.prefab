@@ -72,11 +72,11 @@ GameObject:
   - component: {fileID: 1908617798831631876}
   m_Layer: 0
   m_Name: MummyCatController
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1908617798831631877
 Transform:
   m_ObjectHideFlags: 0
@@ -114,7 +114,7 @@ MonoBehaviour:
   powerAttack: 1
   layerChangeDirection:
     serializedVersion: 2
-    m_Bits: 2048
+    m_Bits: 4096
   rayOrigin: {fileID: 1064487687}
   RayRange: 0.3
   MovingOnAweke: 1
@@ -262,8 +262,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   On: 1
-  lootNum: 1
-  lootPrefab: {fileID: 0}
+  RandomLoot: 0
+  MinDropNum: 0
+  MaxDropNum: 0
+  lootPrefab:
+  - {fileID: 0}
 --- !u!1 &1908617799811868219
 GameObject:
   m_ObjectHideFlags: 0

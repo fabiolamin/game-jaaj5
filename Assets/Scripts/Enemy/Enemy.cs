@@ -26,7 +26,7 @@ public class Enemy : Character
 
     public virtual void Attack(Character character) // need a player to attack
     {
-        // character.Hit(1);
+       //
     }
 
     public virtual void ChangeDirectionRaycast() 
