@@ -5,7 +5,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D playerRb;
     private Vector2 movement = Vector2.zero;
     private float horizontalInput;
-    private float scaleX = 1f;
+    private float rotation = 1f;
     private bool isJumping = false;
     private float initialHeight = 0;
 
@@ -14,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float movementSpeed = 10f;
     [SerializeField] private float jumpVelocity = 50f;
     [SerializeField] private float maxJumpingHeight = 10f;
+
+    public Vector2 ForwardDirection { get; private set; }
 
     private void Awake()
     {
@@ -31,13 +33,15 @@ public class PlayerMovement : MonoBehaviour
     {
         if (horizontalInput != 0)
         {
-            scaleX = Mathf.Sign(horizontalInput);
+            rotation = Mathf.Sign(horizontalInput);
         }
 
         transform.localScale = new Vector3(
-        scaleX,
+        rotation,
         transform.localScale.y,
         transform.localScale.z);
+
+        ForwardDirection = new Vector2(rotation, 0);
     }
 
     private void Move()
