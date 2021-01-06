@@ -4,7 +4,6 @@ public class PlayerAttack : MonoBehaviour
 {
     private bool airAttackInput;
 
-    [SerializeField] private Collider2D footCollider;
     [SerializeField] private float defaultAttackRange = 5f;
     [SerializeField] private int defaultAttackDamage = 5;
 
@@ -14,7 +13,6 @@ public class PlayerAttack : MonoBehaviour
     {
         SetAirAttack();
         CheckDefaultAttack();
-
     }
 
     private void SetAirAttack()
@@ -27,7 +25,7 @@ public class PlayerAttack : MonoBehaviour
 
     private void CheckDefaultAttack()
     {
-        if(Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.A))
         {
             SetDefaultAttack();
         }
@@ -58,11 +56,5 @@ public class PlayerAttack : MonoBehaviour
     {
         return CanAttackByAir() &&
         PlayerManager.Instance.PlayerMovement.IsOnTheGround();
-    }
-
-    public bool CanAttackEnemyByAir()
-    {
-        return CanAttackByAir() &&
-        Physics2D.IsTouchingLayers(footCollider, LayerMask.GetMask("Enemy"));
     }
 }
