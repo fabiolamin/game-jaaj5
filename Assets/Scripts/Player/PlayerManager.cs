@@ -21,6 +21,7 @@ public class PlayerManager : MonoBehaviour
     public PlayerScore PlayerScore { get; private set; }
     public PlayerAttack PlayerAttack { get; private set; }
     public Animator PlayerAnimator { get; private set; }
+    public PlayerCollector PlayerCollector { get; private set; }
 
     private void Awake()
     {
@@ -31,27 +32,6 @@ public class PlayerManager : MonoBehaviour
         PlayerScore = GetComponent<PlayerScore>();
         PlayerAttack = GetComponent<PlayerAttack>();
         PlayerAnimator = GetComponent<Animator>();
-    }
-
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        CheckForCollectible(other);
-    }
-
-    private void CheckForCollectible(Collision2D other)
-    {
-        Collectible collectible = other.gameObject.GetComponent<Collectible>();
-        if (collectible && !collectible.HasBeenCaught)
-        {
-            CatchCollectible(collectible);
-        }
-    }
-
-    private void CatchCollectible(Collectible collectible)
-    {
-        collectible.HasBeenCaught = true;
-        PlayerTimer.UpdateTimer(collectible.TimerAmount);
-        PlayerScore.AddScore(collectible.PointsAmount);
-        collectible.gameObject.SetActive(false);
+        PlayerCollector = GetComponent<PlayerCollector>();
     }
 }
