@@ -3,17 +3,18 @@ using UnityEngine.UI;
 
 public class PlayerScore : MonoBehaviour
 {
-    private int score = 0;
     [SerializeField] private Text scoreText;
+
+    public int Score { get; private set; }
 
     private void Awake()
     {
-        scoreText.text = score.ToString();
+        scoreText.text = Score.ToString();
     }
 
     public void AddScore(int amount)
     {
-        score += amount;
-        scoreText.text = score.ToString();
+        Score += amount;
+        scoreText.text = Score.ToString();
     }
 }

@@ -138,8 +138,4 @@ MonoBehaviour:
   pointsAmount: 3
   followSpeed: 5
   spawnForce: 2
-  delayToBeCaught: 1
-  colors:
-  - {r: 1, g: 0, b: 0.8541789, a: 1}
-  - {r: 0.8556745, g: 1, b: 0, a: 1}
-  - {r: 1, g: 0, b: 0, a: 1}
+  delayToBeCaught: 0.6
