@@ -14,6 +14,11 @@ public class ScarabController : Enemy
    
     int direction = 1; // -1 to move left and 1 to move right
 
+    private void Start()
+    {
+        particlePos = scarabTransform;
+    }   
+    
     private void FixedUpdate()
     {
 
@@ -28,14 +33,6 @@ public class ScarabController : Enemy
 
         }
 
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            Hit(1);
-        }
     }
 
 
@@ -68,14 +65,7 @@ public class ScarabController : Enemy
         }
     }
 
-    protected override void Die()
-    {
-        alive = false;
-        LootGen.Generate();     
-        //anim die      
-    }
-
-
+ 
     public override void ChangeDirectionRaycast()
     {
         raycastHit = Physics2D.Raycast(rayOrigin.position, Vector3.right * direction, RayRange, layerChangeDirection);

@@ -16,6 +16,10 @@ public class AnubisController : Enemy
 
     int direction = 1; // -1 to move left and 1 to move right
 
+    private void Start()
+    {
+        particlePos = anubisTransform;
+    }
 
     private void FixedUpdate()
     {
@@ -65,20 +69,17 @@ public class AnubisController : Enemy
         }
     }
 
-    protected override void Die()
-    {
-        alive = false;
-        //anim die
-    }
+
     public override void Hit(int damage)
     {
         base.Hit(damage);
     }
 
-    public override void Attack(Character character)
+    public override void Attack(int damage)
     {
         isMoving = false;
         StartCoroutine(StartAnimAttack());
+        base.Attack(damage);
     }
 
     IEnumerator StartAnimAttack()

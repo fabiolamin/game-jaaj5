@@ -14,6 +14,10 @@ public class MummyController : Enemy
     [SerializeField] float reviveCooldown;
     int direction = 1; // -1 to move left and 1 to move right
 
+    private void Start()
+    {
+        particlePos = mummyTransform;
+    }
     private void FixedUpdate()
     {
         
@@ -28,14 +32,6 @@ public class MummyController : Enemy
   
         }    
 
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            Hit(1);
-        }
     }
 
 
@@ -73,7 +69,7 @@ public class MummyController : Enemy
         alive = false;
         LootGen.Generate();
         LootGen.On = false;
-        //anim die
+        //Instantiate(particle, particlePos.position, Quaternion.identity);
         StartCoroutine(Revive());
     }
   
