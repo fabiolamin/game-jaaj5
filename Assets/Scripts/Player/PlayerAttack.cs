@@ -40,7 +40,7 @@ public class PlayerAttack : MonoBehaviour
 
         if (target)
         {
-            Enemy enemy = target.collider.transform.root.GetComponent<Enemy>();
+            Enemy enemy = target.collider.transform.parent.GetComponent<Enemy>();
             enemy.Hit(defaultAttackDamage);
         }
     }

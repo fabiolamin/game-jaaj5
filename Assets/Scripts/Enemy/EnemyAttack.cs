@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class EnemyAttack : MonoBehaviour
 {
-   
+
     Enemy enemy;
 
     private void Start()
     {
-        enemy = transform.root.GetComponent<Enemy>();
+        enemy = transform.parent.GetComponent<Enemy>();
     }
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if(col.tag == "Player") 
+        if (col.tag == "Player")
         {
             if (enemy.alive)
-                enemy.Attack(enemy.powerAttack);
+            enemy.Attack(enemy.powerAttack);
         }
     }
 }

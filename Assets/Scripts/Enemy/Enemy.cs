@@ -25,6 +25,7 @@ public class Enemy : Character
 
     public virtual void Attack(int damage) // need a player to attack
     {
+        Debug.Log("attack");
         PlayerManager.Instance.PlayerHealth.GetDamage(damage);
     }
 

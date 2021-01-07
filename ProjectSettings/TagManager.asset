@@ -43,3 +43,21 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: TileBackGorund
+    uniqueID: 2735589505
+    locked: 0
+  - name: TileGround
+    uniqueID: 4141982697
+    locked: 0
+  - name: Enemy
+    uniqueID: 770668127
+    locked: 0
+  - name: Player
+    uniqueID: 1886212187
+    locked: 0
+  - name: BreakableGround
+    uniqueID: 2987138999
+    locked: 0
+  - name: Particles
+    uniqueID: 781220929
+    locked: 0
