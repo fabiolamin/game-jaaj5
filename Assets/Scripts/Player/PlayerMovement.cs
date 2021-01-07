@@ -3,9 +3,11 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D playerRb;
+    private SpriteRenderer spriteRenderer;
     private Vector2 movement = Vector2.zero;
     private float horizontalInput;
-    private float rotation = 1f;
+    private bool hasTurned;
+    private float forward = 1f;
     private bool isJumping = false;
     private float initialHeight = 0;
 
@@ -20,6 +22,8 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         playerRb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        hasTurned = spriteRenderer.flipX;
     }
 
     private void Update()
@@ -31,17 +35,28 @@ public class PlayerMovement : MonoBehaviour
 
     private void Rotate()
     {
-        if (horizontalInput != 0)
+        if (horizontalInput > 0)
         {
-            rotation = Mathf.Sign(horizontalInput);
+            hasTurned = false;
+        }
+        else if (horizontalInput < 0)
+        {
+            hasTurned = true;
         }
 
-        transform.localScale = new Vector3(
-        rotation,
-        transform.localScale.y,
-        transform.localScale.z);
+        spriteRenderer.flipX = hasTurned;
 
-        ForwardDirection = new Vector2(rotation, 0);
+        SetForwardDirection();
+    }
+
+    private void SetForwardDirection()
+    {
+        if (horizontalInput != 0)
+        {
+            forward = Mathf.Sign(horizontalInput);
+        }
+
+        ForwardDirection = new Vector2(forward, 0);
     }
 
     private void Move()
