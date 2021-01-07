@@ -10,6 +10,10 @@ public class SandBallController : Enemy
     bool isFollowing;
     GameObject target;
 
+    private void Start()
+    {
+        particlePos = sandBallTransform;
+    }
 
     private void FixedUpdate()
     {
@@ -27,6 +31,7 @@ public class SandBallController : Enemy
     {
         sandBallTransform.position = Vector3.MoveTowards(sandBallTransform.position, target.transform.position, Time.deltaTime * movimentSpeed);
     }
+
 
     private void OnTriggerEnter2D(Collider2D col)
     {

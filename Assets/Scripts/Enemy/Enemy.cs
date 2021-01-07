@@ -5,11 +5,10 @@ using UnityEngine;
 public class Enemy : Character
 {
     // Private variables
+    public int powerAttack;
 
-    public LootGenerator LootGen;
-   
     [SerializeField] protected float movimentSpeed;
-    [SerializeField] protected int powerAttack;
+   
 
     [SerializeField] protected LayerMask layerChangeDirection;
     [SerializeField] protected Transform rayOrigin;
@@ -24,9 +23,9 @@ public class Enemy : Character
     }
     // Private Functions
 
-    public virtual void Attack(Character character) // need a player to attack
+    public virtual void Attack(int damage) // need a player to attack
     {
-       //
+        PlayerManager.Instance.PlayerHealth.GetDamage(damage);
     }
 
     public virtual void ChangeDirectionRaycast() 

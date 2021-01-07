@@ -19,6 +19,10 @@ public class ScorpionController : Enemy
     bool isFollowing;
     Transform target;
 
+    private void Start()
+    {
+        particlePos = scorpTransform;
+    }
     private void FixedUpdate()
     {
 
@@ -111,20 +115,10 @@ public class ScorpionController : Enemy
 
     protected override void Die()
     {
-        alive = false;
-        //anim die
+        LootGen.Generate();
+        //instancia particula
+        base.Die();
     }
-    public override void Hit(int damage)
-    {
-
-    }
-
-    public override void Attack(Character character)
-    {
-
-    }
-
-
 
     public override void ChangeDirectionRaycast()
     {

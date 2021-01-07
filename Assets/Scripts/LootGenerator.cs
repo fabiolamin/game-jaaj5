@@ -12,11 +12,7 @@ public class LootGenerator : MonoBehaviour
 
     private void Start()
     {
-      /*if (StartOn) 
-        {
-            On = true;
-        }
-        */
+        On = true;
     }
    
 

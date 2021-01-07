@@ -118,8 +118,8 @@ Transform:
   m_LocalPosition: {x: -0.439, y: -3.463, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 5810541342834088664}
   - {fileID: 5810541343556284105}
+  - {fileID: 5810541342834088664}
   - {fileID: 5810541342210280666}
   - {fileID: 5810541342284954398}
   m_Father: {fileID: 0}
@@ -137,12 +137,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ea64e5aa68086346aca421b72481d99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LootGen: {fileID: 5810541343556284101}
+  particle: {fileID: 0}
+  particlePos: {fileID: 0}
   alive: 1
   lives: 2
   actualLive: 0
-  LootGen: {fileID: 5810541343556284101}
-  movimentSpeed: 150
   powerAttack: 1
+  movimentSpeed: 150
   layerChangeDirection:
     serializedVersion: 2
     m_Bits: 4096
@@ -185,7 +187,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5810541342542342121}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &5810541342834088662
 BoxCollider2D:
@@ -239,6 +241,7 @@ GameObject:
   - component: {fileID: 5810541343556284101}
   - component: {fileID: 5810541343556284102}
   - component: {fileID: 5810541343556284100}
+  - component: {fileID: 1177287273}
   m_Layer: 12
   m_Name: Scorpion
   m_TagString: Terrestrial
@@ -259,7 +262,7 @@ Transform:
   m_Children:
   - {fileID: 5810541341846096506}
   m_Father: {fileID: 5810541342542342121}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5810541343556284103
 SpriteRenderer:
@@ -328,7 +331,8 @@ MonoBehaviour:
   RandomLoot: 0
   MinDropNum: 0
   MaxDropNum: 0
-  lootPrefab: []
+  lootPrefab:
+  - {fileID: 8248059713621048905, guid: 5907bed409131274bafb08c10c2d408d, type: 3}
 --- !u!61 &5810541343556284102
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -342,7 +346,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.5970496}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -353,7 +357,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 2.1940992}
   m_EdgeRadius: 0
 --- !u!50 &5810541343556284100
 Rigidbody2D:
@@ -376,3 +380,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1177287273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5810541343556284104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e329cd1f95626f84993ac68424849801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

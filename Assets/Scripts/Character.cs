@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
-    [SerializeField] protected bool alive;
+    public LootGenerator LootGen;
+    public GameObject particle;
+    public Transform particlePos;
+
+    [SerializeField] public bool alive;
     [SerializeField] protected int lives, actualLive;
     // Start is called before the first frame update
     void Start()
@@ -26,6 +30,9 @@ public class Character : MonoBehaviour
     protected virtual void Die()
     {
         alive = false;
+        LootGen.Generate();
+        //Instantiate(particle, particlePos.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 
 }
