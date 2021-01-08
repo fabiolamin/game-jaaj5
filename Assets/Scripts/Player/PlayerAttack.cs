@@ -21,6 +21,7 @@ public class PlayerAttack : MonoBehaviour
         !PlayerManager.Instance.PlayerMovement.IsOnTheGround();
 
         PlayerManager.Instance.PlayerAnimator.SetBool("IsAttackingByAir", airAttackInput);
+       
     }
 
     private void CheckDefaultAttack()
