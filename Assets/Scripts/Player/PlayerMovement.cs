@@ -90,8 +90,7 @@ public class PlayerMovement : MonoBehaviour
 
     public bool IsOnTheGround()
     {
-        return Physics2D.IsTouchingLayers(footCollider, LayerMask.GetMask("Ground")) ||
-        Physics2D.IsTouchingLayers(footCollider, LayerMask.GetMask("Breakable Ground"));
+        return Physics2D.IsTouchingLayers(footCollider);
     }
 
     private void SetJump()

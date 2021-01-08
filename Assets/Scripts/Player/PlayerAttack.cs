@@ -35,12 +35,12 @@ public class PlayerAttack : MonoBehaviour
         PlayerManager.Instance.PlayerAnimator.SetTrigger("DefaultAttack");
 
         Vector2 forward = PlayerManager.Instance.PlayerMovement.ForwardDirection;
-        RaycastHit2D target = Physics2D.Raycast(transform.position, forward, defaultAttackRange, LayerMask.GetMask("Enemy"));
+        RaycastHit2D other = Physics2D.Raycast(transform.position, forward, defaultAttackRange, LayerMask.GetMask("Target"));
 
-        if (target)
+        if (other)
         {
-            Enemy enemy = target.collider.transform.parent.GetComponent<Enemy>();
-            enemy.Hit(defaultAttackDamage);
+            ITarget target = other.collider.GetComponent<ITarget>();
+            target.Destroy();
         }
     }
 

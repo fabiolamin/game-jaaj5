@@ -93,16 +93,6 @@ public class MummyCatController : Enemy
         }
     }
 
-    protected override void Die()
-    {
-        alive = false;
-        //anim die
-    }
-    public override void Hit(int damage)
-    {
-        base.Hit(damage);
-    }
-
     public override void ChangeDirectionRaycast()
     {
         raycastHit = Physics2D.Raycast(rayOrigin.position, Vector3.right * direction, RayRange, layerChangeDirection);
