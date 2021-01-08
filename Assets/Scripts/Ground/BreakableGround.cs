@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class BreakableGround : MonoBehaviour
+public class BreakableGround : MonoBehaviour, ITarget
 {
     private LootGenerator lootGenerator;
 
@@ -20,11 +20,11 @@ public class BreakableGround : MonoBehaviour
     {
         if (PlayerManager.Instance.PlayerAttack.CanBreakTheGround())
         {
-            Break();
+            Destroy();
         }
     }
 
-    private void Break()
+    public void Destroy()
     {
         lootGenerator.Generate();
         Instantiate(breakableGroundParticles, transform.position, Quaternion.identity, transform.parent);

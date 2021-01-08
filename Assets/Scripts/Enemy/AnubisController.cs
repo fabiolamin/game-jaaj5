@@ -69,12 +69,6 @@ public class AnubisController : Enemy
         }
     }
 
-
-    public override void Hit(int damage)
-    {
-        base.Hit(damage);
-    }
-
     public override void Attack(int damage)
     {
         isMoving = false;

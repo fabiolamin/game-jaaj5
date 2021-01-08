@@ -64,15 +64,6 @@ public class MummyController : Enemy
         }
     }
 
-    protected override void Die()
-    {
-        alive = false;
-        LootGen.Generate();
-        LootGen.On = false;
-        //Instantiate(particle, particlePos.position, Quaternion.identity);
-        StartCoroutine(Revive());
-    }
-  
     IEnumerator Revive()
     {
         yield return new WaitForSeconds(reviveCooldown);

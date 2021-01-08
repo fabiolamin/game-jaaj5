@@ -113,13 +113,6 @@ public class ScorpionController : Enemy
         }
     }
 
-    protected override void Die()
-    {
-        LootGen.Generate();
-        //instancia particula
-        base.Die();
-    }
-
     public override void ChangeDirectionRaycast()
     {
         raycastHit = Physics2D.Raycast(rayOrigin.position, Vector3.right * direction, RayRange, layerChangeDirection);
