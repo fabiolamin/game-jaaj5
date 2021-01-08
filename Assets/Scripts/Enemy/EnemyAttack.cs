@@ -4,19 +4,15 @@ using UnityEngine;
 
 public class EnemyAttack : MonoBehaviour
 {
-
+    [SerializeField]
     Enemy enemy;
 
-    private void Start()
-    {
-        enemy = transform.parent.GetComponent<Enemy>();
-    }
-
+ 
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.tag == "Player")
         {
-            if (enemy.alive)
+           
             enemy.Attack(enemy.powerAttack);
         }
     }

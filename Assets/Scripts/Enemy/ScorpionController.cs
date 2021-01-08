@@ -6,7 +6,7 @@ public class ScorpionController : Enemy
 {
     // Public Variables
     public bool isMoving;
-   
+
     // Private Variables
     [SerializeField] Transform minPos, maxPos;
     [SerializeField] float followSpeed;
@@ -19,51 +19,43 @@ public class ScorpionController : Enemy
     bool isFollowing;
     Transform target;
 
-    private void Start()
-    {
-        particlePos = scorpTransform;
-    }
     private void FixedUpdate()
     {
 
-        if (alive)
+        if (isMoving)
         {
-            if (isMoving)
+            if (!isFollowing)
             {
-                if (!isFollowing) 
-                {
-                    Move(direction);
-                    DirectionCheck();
-                    ChangeDirectionRaycast();
-                }
-                else 
-                {
-                    MoveToTarget(target);
-                }             
-               
-
+                Move(direction);
+                DirectionCheck();
+                ChangeDirectionRaycast();
             }
+            else
+            {
+                MoveToTarget(target);
+            }
+
 
         }
 
 
     }
 
-    public void FollowTarget(Transform _target) 
+    public void FollowTarget(Transform _target)
     {
         target = _target;
         isFollowing = true;
     }
-    public void StopFollow() 
+    public void StopFollow()
     {
         isFollowing = false;
         target = null;
 
-        if (direction == -1 && scorpTransform.localScale.x > 0) 
+        if (direction == -1 && scorpTransform.localScale.x > 0)
         {
             scorpTransform.localScale = new Vector2(scorpTransform.localScale.x * -1, scorpTransform.localScale.y);
         }
-        else if(direction == 1 && scorpTransform.localScale.x < 0)
+        else if (direction == 1 && scorpTransform.localScale.x < 0)
         {
             scorpTransform.localScale = new Vector2(scorpTransform.localScale.x * -1, scorpTransform.localScale.y);
         }
@@ -71,15 +63,15 @@ public class ScorpionController : Enemy
 
     // Private Functios
 
-    void MoveToTarget(Transform _target) 
+    void MoveToTarget(Transform _target)
     {
-        scorpTransform.position = Vector3.MoveTowards(scorpTransform.position, new Vector2(target.position.x,scorpTransform.position.y), followSpeed * Time.deltaTime);
+        scorpTransform.position = Vector3.MoveTowards(scorpTransform.position, new Vector2(target.position.x, scorpTransform.position.y), followSpeed * Time.deltaTime);
 
-        if (target.position.x > scorpTransform.position.x) 
+        if (target.position.x > scorpTransform.position.x)
         {
             scorpTransform.localScale = new Vector2(1, scorpTransform.localScale.y);
         }
-        else 
+        else
         {
             scorpTransform.localScale = new Vector2(-1, scorpTransform.localScale.y);
         }
@@ -98,7 +90,7 @@ public class ScorpionController : Enemy
             if (scorpRb.velocity.x > 0) // is moving to right
             {
                 direction = -1; // turn to left
-                scorpTransform.localScale = new Vector2(scorpTransform.localScale.x *-1, scorpTransform.localScale.y);
+                scorpTransform.localScale = new Vector2(scorpTransform.localScale.x * -1, scorpTransform.localScale.y);
             }
 
         }

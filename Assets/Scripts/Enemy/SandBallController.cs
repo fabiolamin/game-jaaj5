@@ -4,27 +4,19 @@ using UnityEngine;
 
 public class SandBallController : Enemy
 {
-   
+
     [SerializeField] Transform sandBallTransform;
 
     bool isFollowing;
     GameObject target;
 
-    private void Start()
-    {
-        particlePos = sandBallTransform;
-    }
-
     private void FixedUpdate()
     {
-        if (alive)
+        if (isFollowing)
         {
-            if(isFollowing)
-            {
-                Move();
-            }
+            Move();
         }
-        
+
     }
 
     void Move() // -1 to move left and 1 to move right

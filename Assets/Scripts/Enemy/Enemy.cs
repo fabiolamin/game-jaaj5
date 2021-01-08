@@ -17,10 +17,7 @@ public class Enemy : Character
 
     protected  RaycastHit2D raycastHit;
 
-    private void Start()
-    {
-        actualLive = lives;
-    }
+  
     // Private Functions
 
     public virtual void Attack(int damage) // need a player to attack
