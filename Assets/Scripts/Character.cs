@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Character : MonoBehaviour
+public class Character : MonoBehaviour, ITarget
 {
     public LootGenerator LootGen;
     public GameObject particle;
@@ -16,23 +16,10 @@ public class Character : MonoBehaviour
         actualLive = lives;
     }
 
-    public virtual void Hit(int damage)
+    public void Destroy()
     {
-        actualLive -= damage;
-
-        if (actualLive <= 0) 
-        {
-            actualLive = 0;           
-            Die();
-        }
-    }
-
-    protected virtual void Die()
-    {
-        alive = false;
-        LootGen.Generate();
         //Instantiate(particle, particlePos.position, Quaternion.identity);
-        Destroy(gameObject);
+        LootGen.Generate();
+        gameObject.SetActive(false);
     }
-
 }
