@@ -7,23 +7,30 @@ using UnityEngine.SceneManagement;
 public class MainMenuUIConroller : MonoBehaviour
 {
     [SerializeField]
-    Button playButton, creditsButton, returnButton;
+    GameObject CreditsUI, MenuUi;
 
     [SerializeField]
-    GameObject creditsUi;
+    int indexOfLevelOne;
 
-    public void Play(int _scene)
+    private void Start()
     {
-        SceneManager.LoadScene(_scene);
+        CreditsUI.SetActive(false);
+        MenuUi.SetActive(true);
+    }
+    public void Play()
+    {
+        SceneManager.LoadScene(indexOfLevelOne);
     }
 
     public void Credits()
     {
-
+        MenuUi.SetActive(false);
+        CreditsUI.SetActive(true);   
     }
 
     public void Return()
     {
-
+        CreditsUI.SetActive(false);
+        MenuUi.SetActive(true);  
     }
 }
