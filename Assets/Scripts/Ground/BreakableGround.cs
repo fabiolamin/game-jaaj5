@@ -22,16 +22,11 @@ public class BreakableGround : MonoBehaviour
         {
             Break();
         }
-        else
-        {
-            PlayerManager.Instance.PlayerAttack.IsReadyToAttackByAir = false;
-        }
     }
 
     private void Break()
     {
         lootGenerator.Generate();
-        PlayerManager.Instance.PlayerAttack.IsReadyToAttackByAir = false;
         Instantiate(breakableGroundParticles, transform.position, Quaternion.identity, transform.parent);
         gameObject.SetActive(false);
     }

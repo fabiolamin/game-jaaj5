@@ -7,8 +7,6 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private float defaultAttackRange = 5f;
     [SerializeField] private int defaultAttackDamage = 5;
 
-    public bool IsReadyToAttackByAir { get; set; } = false;
-
     private void Update()
     {
         SetAirAttack();
@@ -48,8 +46,7 @@ public class PlayerAttack : MonoBehaviour
 
     public bool CanAttackByAir()
     {
-        return IsReadyToAttackByAir &&
-        airAttackInput &&
+        return airAttackInput &&
         !PlayerManager.Instance.PlayerMovement.IsTouchingRoof();
     }
 

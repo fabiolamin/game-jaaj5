@@ -99,7 +99,6 @@ public class PlayerMovement : MonoBehaviour
         initialHeight = transform.position.y;
         movement.y = jumpVelocity;
         isJumping = true;
-        PlayerManager.Instance.PlayerAttack.IsReadyToAttackByAir = true;
         PlayerManager.Instance.PlayerAnimator.SetTrigger("Jump");
     }
 
