@@ -29,7 +29,7 @@ public class PlayerTimer : MonoBehaviour
     {
         if (currentTimer <= 0)
         {
-            PlayerManager.Instance.PlayerHealth.GetDamage(1);
+            PlayerManager.Instance.PlayerHealth.GetDamage();
             currentTimer = timer;
         }
     }
