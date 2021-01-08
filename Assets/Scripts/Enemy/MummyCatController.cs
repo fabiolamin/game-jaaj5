@@ -17,29 +17,25 @@ public class MummyCatController : Enemy
 
     private void Start()
     {
-        if (MovingOnAweke) 
+        if (MovingOnAweke)
         {
             StartCoroutine(MoveState());
         }
-        else 
+        else
         {
             StartCoroutine(StopState());
         }
-        
+
     }
     private void FixedUpdate()
     {
 
-        if (alive)
+
+        if (isMoving)
         {
-
-            if (isMoving)
-            {
-                Move(direction);
-                DirectionCheck();
-                ChangeDirectionRaycast();
-
-            }
+            Move(direction);
+            DirectionCheck();
+            ChangeDirectionRaycast();
 
         }
 
@@ -58,7 +54,7 @@ public class MummyCatController : Enemy
         isMoving = false;
         yield return new WaitForSeconds(tempToMove);
         StartCoroutine(MoveState());
-       
+
     }
 
 

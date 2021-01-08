@@ -11,27 +11,20 @@ public class ScarabController : Enemy
     [SerializeField] Transform minPos, maxPos;
     [SerializeField] Rigidbody2D rb;
     [SerializeField] Transform scarabTransform;
-   
+
     int direction = 1; // -1 to move left and 1 to move right
 
-    private void Start()
-    {
-        particlePos = scarabTransform;
-    }   
-    
+ 
     private void FixedUpdate()
     {
 
-        if (alive)
+        if (isMoving)
         {
-            if (isMoving)
-            {
-                Move(direction);
-                DirectionCheck();
-                ChangeDirectionRaycast();
-            }
-
+            Move(direction);
+            DirectionCheck();
+            ChangeDirectionRaycast();
         }
+
 
     }
 
@@ -65,7 +58,7 @@ public class ScarabController : Enemy
         }
     }
 
- 
+
     public override void ChangeDirectionRaycast()
     {
         raycastHit = Physics2D.Raycast(rayOrigin.position, Vector3.right * direction, RayRange, layerChangeDirection);

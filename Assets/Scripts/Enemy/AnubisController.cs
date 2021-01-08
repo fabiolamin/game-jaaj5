@@ -16,16 +16,11 @@ public class AnubisController : Enemy
 
     int direction = 1; // -1 to move left and 1 to move right
 
-    private void Start()
-    {
-        particlePos = anubisTransform;
-    }
 
     private void FixedUpdate()
     {
 
-        if (alive)
-        {
+        
             if (isMoving)
             {
                 Move(direction);
@@ -33,8 +28,6 @@ public class AnubisController : Enemy
                 ChangeDirectionRaycast();
 
             }
-
-        }
 
 
     }

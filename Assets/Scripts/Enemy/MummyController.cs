@@ -14,23 +14,19 @@ public class MummyController : Enemy
     [SerializeField] float reviveCooldown;
     int direction = 1; // -1 to move left and 1 to move right
 
-    private void Start()
-    {
-        particlePos = mummyTransform;
-    }
+  
     private void FixedUpdate()
     {
-        
-        if (alive) 
+
+
+        if (isMoving)
         {
-            if (isMoving)
-            {
-                Move(direction);
-                DirectionCheck();
-                ChangeDirectionRaycast();
-            }
-  
-        }    
+            Move(direction);
+            DirectionCheck();
+            ChangeDirectionRaycast();
+        }
+
+
 
     }
 
@@ -41,7 +37,7 @@ public class MummyController : Enemy
         rb.velocity = new Vector2(Time.deltaTime * movimentSpeed * direction, rb.velocity.y);
     }
 
-    void DirectionCheck() 
+    void DirectionCheck()
     {
         if (mummyTransform.position.x >= maxPos.position.x)
         {
@@ -64,12 +60,12 @@ public class MummyController : Enemy
         }
     }
 
-    IEnumerator Revive()
-    {
-        yield return new WaitForSeconds(reviveCooldown);
-        actualLive = lives;
-        alive = true;
-    }
+    /* IEnumerator Revive()
+     {
+         yield return new WaitForSeconds(reviveCooldown);
+         actualLive = lives;
+         alive = true;
+     }*/
 
     public override void ChangeDirectionRaycast()
     {
@@ -79,7 +75,7 @@ public class MummyController : Enemy
         {
 
             if (raycastHit.collider.CompareTag("Terrestrial"))
-            {             
+            {
                 direction *= -1;
                 mummyTransform.localScale = new Vector2(mummyTransform.localScale.x * -1, mummyTransform.localScale.y);
             }

@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 5953962498698424245}
   - component: {fileID: 6683554408849318390}
   - component: {fileID: 6755767176484313638}
-  m_Layer: 12
+  - component: {fileID: 1641789034350193166}
+  m_Layer: 13
   m_Name: SandBall
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -72,7 +73,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 770668127
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: 4adeaf2d2b1c7417e89f026626d8264f, type: 3}
   m_Color: {r: 0.8867924, g: 0.6285736, b: 0.15477037, a: 0.74509805}
@@ -131,6 +132,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e329cd1f95626f84993ac68424849801, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemy: {fileID: 5953962499106686565}
+--- !u!114 &1641789034350193166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5953962498698424247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06d32d632265ce94bba858110b29a29f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particle: {fileID: 0}
 --- !u!1 &5953962499106686568
 GameObject:
   m_ObjectHideFlags: 0
@@ -192,14 +207,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c08435c74c01c342a4f279621dcfe81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LootGen: {fileID: 6683554408849318390}
-  particle: {fileID: 0}
-  particlePos: {fileID: 0}
-  alive: 1
-  lives: 2
-  actualLive: 0
   powerAttack: 1
-  movimentSpeed: 4
+  movimentSpeed: 1.5
   layerChangeDirection:
     serializedVersion: 2
     m_Bits: 0
