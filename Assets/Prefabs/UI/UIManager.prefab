@@ -44,3 +44,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FinishGameUI: {fileID: 0}
+  PauseGameUI: {fileID: 0}
+  GamePlayUI: {fileID: 0}

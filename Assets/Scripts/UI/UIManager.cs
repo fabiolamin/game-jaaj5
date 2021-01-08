@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class UIManager : MonoBehaviour
 {
     [SerializeField]
-    GameObject FinishGameUI, PauseGameUI;
+    GameObject FinishGameUI, PauseGameUI, GamePlayUI;
 
     private static UIManager _instace;
     public static UIManager instance
@@ -27,6 +27,8 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         FinishGameUI.SetActive(false);
+        PauseGameUI.SetActive(false);
+        GamePlayUI.SetActive(true);
     }
 
     public static void FinishLevel(int level)
@@ -34,5 +36,27 @@ public class UIManager : MonoBehaviour
         UIManager.instance.FinishGameUI.SetActive(false);
     }
 
+    public void ContinueButton() 
+    {
+    
+    }
+    public void RestartButton()
+    {
 
+    }
+
+    public void PauseButton()
+    {
+
+    }
+
+    public void NextLevelButton()
+    {
+
+    }
+
+    public void MenuButton()
+    {
+
+    }
 }
