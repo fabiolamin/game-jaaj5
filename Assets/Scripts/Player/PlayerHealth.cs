@@ -13,10 +13,10 @@ public class PlayerHealth : MonoBehaviour
         currentLives = lives;
     }
 
-    public void GetDamage(int amount)
+    public void GetDamage()
     {
         PlayerManager.Instance.PlayerAnimator.SetTrigger("GetDamage");
-        currentLives = Mathf.Clamp(currentLives - amount, 0, lives);
+        currentLives = Mathf.Clamp(currentLives - 1, 0, lives);
         playerLivesText.text = currentLives.ToString();
         CheckHealth();
     }
