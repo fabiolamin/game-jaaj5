@@ -142,3 +142,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   breakableGroundParticles: {fileID: 8138706945490724667, guid: b9a946a4bbe9b6248b3debea6765eeb6, type: 3}
+  breakableGroundClip: {fileID: 8300000, guid: 29e4e85498611d6469198238103fd5aa, type: 3}

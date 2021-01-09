@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerCollector : MonoBehaviour
 {
     [SerializeField] private ParticleSystem collectionRewardParticles;
+    [SerializeField] private AudioClip collectibleClip;
     private void OnCollisionEnter2D(Collision2D other)
     {
         CheckForCollectible(other);
@@ -20,6 +21,7 @@ public class PlayerCollector : MonoBehaviour
     private void CatchCollectible(Collectible collectible)
     {
         collectible.HasBeenCaught = true;
+        PlayerManager.Instance.AudioSource.PlayOneShot(collectibleClip);
         AddCollectiblesToPlayer(collectible);
         PlayParticles();
         collectible.gameObject.SetActive(false);
