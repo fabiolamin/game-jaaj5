@@ -35,15 +35,24 @@ public class PlayerAttack : MonoBehaviour
     {
         PlayerManager.Instance.AudioSource.PlayOneShot(defaultAttackClip);
         PlayerManager.Instance.PlayerAnimator.SetTrigger("DefaultAttack");
+        SearchForTarget();
+    }
 
+    private void SearchForTarget()
+    {
         Vector2 forward = PlayerManager.Instance.PlayerMovement.ForwardDirection;
         RaycastHit2D other = Physics2D.Raycast(transform.position, forward, defaultAttackRange, LayerMask.GetMask("Target"));
 
         if (other)
         {
-            ITarget target = other.collider.GetComponent<ITarget>();
-            target.Destroy();
+            DestroyTarget(other);
         }
+    }
+
+    private void DestroyTarget(RaycastHit2D other)
+    {
+        ITarget target = other.collider.GetComponent<ITarget>();
+        target.Destroy();
     }
 
     public bool CanAttackByAir()
