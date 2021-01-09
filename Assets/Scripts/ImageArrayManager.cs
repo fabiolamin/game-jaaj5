@@ -55,8 +55,7 @@ public class ImageArrayManager : MonoBehaviour
         while (cameraTransform.position.x != target.x) 
         {
             cameraTransform.position = Vector3.MoveTowards(cameraTransform.position, newPosition, speed * Time.deltaTime);
-            yield return null;
-            print(122);
+            yield return null;           
         }
        
         canMove = true;
