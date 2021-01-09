@@ -134,8 +134,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f30605c983a8df8459ac7f86fef79995, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerAmount: 3
-  pointsAmount: 3
+  timerAmount: 2
+  pointsAmount: 2
   followSpeed: 7
   spawnForce: 2
   delayToBeCaught: 0.2

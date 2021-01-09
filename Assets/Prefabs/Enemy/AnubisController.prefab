@@ -389,11 +389,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   On: 1
-  RandomLoot: 0
-  MinDropNum: 0
-  MaxDropNum: 0
+  RandomLoot: 1
+  MinDropNum: 2
+  MaxDropNum: 3
   lootPrefab:
-  - {fileID: 8248059713621048905, guid: 5907bed409131274bafb08c10c2d408d, type: 3}
+  - {fileID: 8248059713621048905, guid: 20d7de75a4dd0be4aae9691c44c02beb, type: 3}
+  - {fileID: 8248059713621048905, guid: 20d7de75a4dd0be4aae9691c44c02beb, type: 3}
+  - {fileID: 8248059713621048905, guid: 9cefac087c509464cbe7b1934d0e8a85, type: 3}
 --- !u!114 &4820834103395015447
 MonoBehaviour:
   m_ObjectHideFlags: 0
