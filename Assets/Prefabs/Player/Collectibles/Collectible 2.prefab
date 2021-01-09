@@ -138,4 +138,4 @@ MonoBehaviour:
   pointsAmount: 5
   followSpeed: 7
   spawnForce: 2
-  delayToBeCaught: 0.2
+  delayToBeCaught: 0.4
