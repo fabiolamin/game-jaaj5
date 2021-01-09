@@ -499,9 +499,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   On: 1
-  RandomLoot: 0
+  RandomLoot: 1
   MinDropNum: 1
-  MaxDropNum: 5
+  MaxDropNum: 2
   lootPrefab:
   - {fileID: 8248059713621048905, guid: 5907bed409131274bafb08c10c2d408d, type: 3}
 --- !u!114 &4211861530078191125
