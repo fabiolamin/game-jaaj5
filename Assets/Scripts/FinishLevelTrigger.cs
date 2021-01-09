@@ -9,8 +9,7 @@ public class FinishLevelTrigger : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.tag == "Player")
-        {
-            
+        {         
             UIManager.instance.FinishLevel(nextLevelIndex);
         }
 

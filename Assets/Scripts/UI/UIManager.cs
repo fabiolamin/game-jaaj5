@@ -20,7 +20,7 @@ public class UIManager : MonoBehaviour
         {
             if (_instace == null)
             {
-                _instace = GameObject.FindObjectOfType<UIManager>();
+                _instace = FindObjectOfType<UIManager>();
             }
             return _instace;
         }
