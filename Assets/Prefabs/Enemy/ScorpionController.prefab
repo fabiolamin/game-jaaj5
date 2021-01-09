@@ -533,7 +533,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dieAudio: {fileID: 4263011148772595369}
-  particle: {fileID: 0}
+  enemyDeathParticles: {fileID: 7793830358360848465, guid: a6a65574388dd6343a67fc8a6acd1183, type: 3}
 --- !u!95 &665518459
 Animator:
   serializedVersion: 3

@@ -276,7 +276,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dieAudio: {fileID: 3147389738354616596}
-  particle: {fileID: 0}
+  enemyDeathParticles: {fileID: 7793830358360848465, guid: a6a65574388dd6343a67fc8a6acd1183, type: 3}
 --- !u!1 &5953962499106686568
 GameObject:
   m_ObjectHideFlags: 0
