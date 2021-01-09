@@ -1,5 +1,132 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4213314726949270370
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 623434130020192795}
+  - component: {fileID: 4263011148772595369}
+  m_Layer: 0
+  m_Name: Morte inimigo som (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &623434130020192795
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4213314726949270370}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 328.6301, y: 32.71824, z: 0}
+  m_LocalScale: {x: 3.4728527, y: 3.4728527, z: 3.4728527}
+  m_Children: []
+  m_Father: {fileID: 5810541342542342121}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &4263011148772595369
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4213314726949270370}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: d2f19f3c66c250145ac3d077d8d8e70f, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.64
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 39
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &5810541341846096509
 GameObject:
   m_ObjectHideFlags: 0
@@ -122,6 +249,7 @@ Transform:
   - {fileID: 5810541342834088664}
   - {fileID: 5810541342210280666}
   - {fileID: 5810541342284954398}
+  - {fileID: 623434130020192795}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -138,17 +266,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerAttack: 1
-  movimentSpeed: 70
+  movimentSpeed: 45
   layerChangeDirection:
     serializedVersion: 2
     m_Bits: 4096
   rayOrigin: {fileID: 5810541341846096506}
   RayRange: 0.3
-  audioAttack: {fileID: 8300000, guid: be195c8009f812f4c86a2d23059f0c05, type: 3}
   isMoving: 1
   minPos: {fileID: 5810541342210280666}
   maxPos: {fileID: 5810541342284954398}
-  followSpeed: 4.3
+  followSpeed: 3.4
   scorpRb: {fileID: 5810541343556284100}
   scorpTransform: {fileID: 5810541343556284105}
   scorpAnim: {fileID: 0}
@@ -389,6 +516,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 5810541342542342120}
+  attackDelay: 0.8
 --- !u!114 &4555642649368516337
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -401,4 +529,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06d32d632265ce94bba858110b29a29f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dieAudio: {fileID: 4263011148772595369}
   particle: {fileID: 0}
