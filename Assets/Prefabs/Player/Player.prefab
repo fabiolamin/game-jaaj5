@@ -663,7 +663,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4eb612a6c7a6c124d8cec6477acd6606, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lives: 5
+  lives: 10
   playerLivesText: {fileID: 0}
   damageClip: {fileID: 8300000, guid: 4dff4ac929b8b354180039742fbaab45, type: 3}
 --- !u!114 &1217349890
