@@ -12,6 +12,7 @@ public class PlayerHealth : MonoBehaviour
     private void Awake()
     {
         currentLives = lives;
+        playerLivesText.text = currentLives.ToString();
     }
 
     public void GetDamage()
