@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class MainMenuUIConroller : MonoBehaviour
 {
     [SerializeField]
-    GameObject CreditsUI, MenuUi;
+    GameObject CreditsUI, MenuUi, TutorialUI;
 
     [SerializeField]
     int indexOfLevelOne;
@@ -15,6 +15,7 @@ public class MainMenuUIConroller : MonoBehaviour
     private void Start()
     {
         CreditsUI.SetActive(false);
+        TutorialUI.SetActive(false);
         MenuUi.SetActive(true);
     }
     public void Play()
@@ -22,6 +23,11 @@ public class MainMenuUIConroller : MonoBehaviour
         SceneManager.LoadScene(indexOfLevelOne);
     }
 
+    public void Tutorial() 
+    {
+        MenuUi.SetActive(false);
+        TutorialUI.SetActive(true);
+    }
     public void Credits()
     {
         MenuUi.SetActive(false);
@@ -31,6 +37,7 @@ public class MainMenuUIConroller : MonoBehaviour
     public void Return()
     {
         CreditsUI.SetActive(false);
+        TutorialUI.SetActive(false);
         MenuUi.SetActive(true);  
     }
 }

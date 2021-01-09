@@ -225,7 +225,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.4433962, g: 0.27434996, b: 0.11921501, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -284,10 +284,6 @@ PrefabInstance:
       value: ImageArrayManager
       objectReference: {fileID: 0}
     - target: {fileID: 6504249318682524030, guid: de0eabe64ad97e441b639dc3041aec93, type: 3}
-      propertyPath: speed
-      value: 35
-      objectReference: {fileID: 0}
-    - target: {fileID: 6504249318682524030, guid: de0eabe64ad97e441b639dc3041aec93, type: 3}
       propertyPath: cameraTransform
       value: 
       objectReference: {fileID: 1975166351}
@@ -344,6 +340,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6760114108449070096, guid: 9a13d2e34476e1c419fbe2c14d4502e8, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 219.6
+      objectReference: {fileID: 0}
     - target: {fileID: 6760114110385732083, guid: 9a13d2e34476e1c419fbe2c14d4502e8, type: 3}
       propertyPath: m_Name
       value: Canvas
