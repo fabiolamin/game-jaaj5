@@ -19,8 +19,7 @@ public class AnubisController : Enemy
 
     private void FixedUpdate()
     {
-
-        
+  
             if (isMoving)
             {
                 Move(direction);
@@ -28,7 +27,6 @@ public class AnubisController : Enemy
                 ChangeDirectionRaycast();
 
             }
-
 
     }
 
@@ -71,9 +69,8 @@ public class AnubisController : Enemy
 
     IEnumerator StartAnimAttack()
     {
-        anubisAnim.SetBool("attack", true);
-        yield return new WaitForSeconds(0.5f);
-        anubisAnim.SetBool("attack", false);
+        anubisAnim.SetTrigger("attack");
+        yield return new WaitForSeconds(0.3f);
         isMoving = true;
     }
 
