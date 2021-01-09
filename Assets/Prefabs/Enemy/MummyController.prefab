@@ -83,6 +83,7 @@ MonoBehaviour:
     m_Bits: 4096
   rayOrigin: {fileID: 1030838491}
   RayRange: 0.3
+  audioAttack: {fileID: 8300000, guid: 92ecaa0861427514d8bdf33c4a800587, type: 3}
   isMoving: 1
   minPos: {fileID: 4211861530102969368}
   maxPos: {fileID: 4211861530436956529}
@@ -143,7 +144,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4211861530436956528}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.04, y: -2.224, z: 0}
+  m_LocalPosition: {x: 6.82, y: -2.224, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4211861529975733350}

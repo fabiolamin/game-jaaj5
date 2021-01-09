@@ -13,7 +13,7 @@ public class Enemy : Character
     [SerializeField] protected LayerMask layerChangeDirection;
     [SerializeField] protected Transform rayOrigin;
     [SerializeField] protected float RayRange;
-
+   
 
     protected  RaycastHit2D raycastHit;
 
@@ -21,8 +21,7 @@ public class Enemy : Character
     // Private Functions
 
     public virtual void Attack(int damage) // need a player to attack
-    {
-        Debug.Log("attack");
+    {       
         PlayerManager.Instance.PlayerHealth.GetDamage();
     }
 
