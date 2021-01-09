@@ -6,6 +6,7 @@ public class PlayerAttack : MonoBehaviour
 
     [SerializeField] private float defaultAttackRange = 5f;
     [SerializeField] private int defaultAttackDamage = 5;
+    [SerializeField] private AudioClip defaultAttackClip;
 
     private void Update()
     {
@@ -32,6 +33,7 @@ public class PlayerAttack : MonoBehaviour
 
     private void SetDefaultAttack()
     {
+        PlayerManager.Instance.AudioSource.PlayOneShot(defaultAttackClip);
         PlayerManager.Instance.PlayerAnimator.SetTrigger("DefaultAttack");
 
         Vector2 forward = PlayerManager.Instance.PlayerMovement.ForwardDirection;

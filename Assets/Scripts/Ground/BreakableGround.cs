@@ -5,6 +5,7 @@ public class BreakableGround : MonoBehaviour, ITarget
     private LootGenerator lootGenerator;
 
     [SerializeField] private GameObject breakableGroundParticles;
+    [SerializeField] private AudioClip breakableGroundClip;
 
     private void Awake()
     {
@@ -26,6 +27,7 @@ public class BreakableGround : MonoBehaviour, ITarget
 
     public void Destroy()
     {
+        AudioSource.PlayClipAtPoint(breakableGroundClip, transform.position, 1f);
         lootGenerator.Generate();
         Instantiate(breakableGroundParticles, transform.position, Quaternion.identity, transform.parent);
         gameObject.SetActive(false);

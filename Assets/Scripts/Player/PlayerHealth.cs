@@ -7,6 +7,7 @@ public class PlayerHealth : MonoBehaviour
     private int currentLives;
     [SerializeField] private int lives;
     [SerializeField] private Text playerLivesText;
+    [SerializeField] private AudioClip damageClip;
 
     private void Awake()
     {
@@ -15,6 +16,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void GetDamage()
     {
+        PlayerManager.Instance.AudioSource.PlayOneShot(damageClip);
         PlayerManager.Instance.PlayerAnimator.SetTrigger("GetDamage");
         currentLives = Mathf.Clamp(currentLives - 1, 0, lives);
         playerLivesText.text = currentLives.ToString();

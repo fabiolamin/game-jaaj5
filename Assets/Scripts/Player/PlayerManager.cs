@@ -22,6 +22,7 @@ public class PlayerManager : MonoBehaviour
     public PlayerAttack PlayerAttack { get; private set; }
     public Animator PlayerAnimator { get; private set; }
     public PlayerCollector PlayerCollector { get; private set; }
+    public AudioSource AudioSource { get; private set; }
 
     private void Awake()
     {
@@ -33,5 +34,6 @@ public class PlayerManager : MonoBehaviour
         PlayerAttack = GetComponent<PlayerAttack>();
         PlayerAnimator = GetComponent<Animator>();
         PlayerCollector = GetComponent<PlayerCollector>();
+        AudioSource = GetComponent<AudioSource>();
     }
 }
