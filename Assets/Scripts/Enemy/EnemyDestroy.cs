@@ -5,9 +5,8 @@ using UnityEngine;
 public class EnemyDestroy : MonoBehaviour, ITarget
 {
     [SerializeField] AudioSource dieAudio;
+    [SerializeField] private ParticleSystem enemyDeathParticles;
     LootGenerator LootGen;
-
-    public GameObject particle;
 
     private void Start()
     {
@@ -16,7 +15,7 @@ public class EnemyDestroy : MonoBehaviour, ITarget
     public void Destroy()
     {
         dieAudio.PlayDelayed(0.12f);
-        //Instantiate(particle, transform.position, Quaternion.identity);
+        Instantiate(enemyDeathParticles, transform.position, Quaternion.identity);
         LootGen.Generate();
         gameObject.SetActive(false);
     }
