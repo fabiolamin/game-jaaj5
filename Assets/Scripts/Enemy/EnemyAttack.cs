@@ -7,6 +7,7 @@ public class EnemyAttack : MonoBehaviour
     [SerializeField]
     Enemy enemy;
     [SerializeField] float attackDelay;
+   
     float canAttack = 0;
 
     private void OnTriggerStay2D(Collider2D col)
