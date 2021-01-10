@@ -40,4 +40,9 @@ public class MainMenuUIConroller : MonoBehaviour
         TutorialUI.SetActive(false);
         MenuUi.SetActive(true);  
     }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }
